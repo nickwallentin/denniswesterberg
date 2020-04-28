@@ -1,0 +1,75 @@
+@import url("https://use.typekit.net/wer4sxu.css");
+:root {
+  /* Set root variables */
+  --font: "Futura PT", Arial, Helvetica, sans-serif;
+  --font-secondary: Georgia, "Times New Roman", Times, serif;
+  --f-weight-heading: 700;
+  --f-weight-subheading: 300;
+  --f-weight-body: 300;
+
+  --bg-light: #ffffff;
+  --bg-light-alpha: #ffffff00;
+  --bg-sec-light: #fafafa;
+
+  --bg-dark: #0d0d0d;
+  --bg-dark-alpha: #0d0d0d00;
+  --bg-sec-dark: #101010;
+
+  --c-heading-light: #000000;
+  --c-body-light: #000000;
+  --c-text-sub-light: #000000;
+
+  --c-heading-dark: #ffffff;
+  --c-body-dark: rgb(210, 210, 210);
+  --c-text-sub-dark: #b0b0b0;
+
+  --c-accent: #ffc700;
+
+  --i-main-light: #000000;
+
+  --i-main-dark: #ffffff;
+}
+
+body.light {
+  /* Light theme */
+
+  --c-bg: var(--bg-light);
+
+  --c-heading: var(--c-heading-light);
+  --c-body: var(--c-body-light);
+  --c-sub: var(--c-text-sub-light);
+
+  --i-main: var(--i-main-light);
+}
+
+body.dark {
+  /* Dark theme */
+
+  --c-bg: var(--bg-dark);
+  --c-bg-alpha: var(--bg-dark-alpha);
+
+  --c-heading: var(--c-heading-dark);
+  --c-body: var(--c-body-dark);
+  --c-sub: var(--c-text-sub-dark);
+
+  --i-main: var(--i-main-dark);
+}
+
+body {
+  /* Default body styles */
+  font-family: var(--font) !important;
+  font-weight: var(--f-weight-body) !important;
+  color: var(--c-body);
+
+  background: var(--c-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--f-weight-heading) !important;
+  color: var(--c-heading);
+}

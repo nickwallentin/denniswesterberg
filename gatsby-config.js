@@ -19,10 +19,10 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-yaml",
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: "gatsby-plugin-react-svg",
       options: {
-        google: {
-          families: ["Futura"],
+        rule: {
+          include: /assets/, // See below to configure properly
         },
       },
     },
@@ -31,6 +31,13 @@ module.exports = {
       options: {
         name: "src",
         path: `${__dirname}/src/`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "srcImages",
+        path: `${__dirname}/src/images`,
       },
     },
     {
@@ -57,7 +64,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sharp",
       options: {
-        defaultQuality: 75,
+        defaultQuality: 80,
       },
     },
     `gatsby-transformer-sharp`,
