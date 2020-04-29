@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import Layout from "../components/Layout"
 import styled from "styled-components"
+import { motion } from "framer-motion"
 import { graphql, Link } from "gatsby"
 import useBlogData from "../static_queries/useBlogData"
 import scrollTo from "gatsby-plugin-smoothscroll"
@@ -17,6 +18,15 @@ import {
   Text,
   Grid,
 } from "../styles/elements"
+
+const fadeIn = {
+  initial: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+  },
+}
 
 export default function Blog(props) {
   const data = props.data.markdownRemark
@@ -54,10 +64,10 @@ export default function Blog(props) {
 
   return (
     <Layout>
-      <article>
+      <Article initial="initial" animate="visible">
         <Box bg="var(--c-bg-sec)">
           <Container>
-            <Box width={["1", 2 / 3]} py={["5", "5"]}>
+            <Box variants={fadeIn} width={["1", 2 / 3]} py={["5", "5"]}>
               <Heading mb="2" fontSize={["2rem", "3.5rem"]} as="h1">
                 {data.frontmatter.title}
               </Heading>
@@ -99,7 +109,7 @@ export default function Blog(props) {
               render={() => (
                 <Sidebar>
                   <Sticky stickyStyle={{ top: "80px" }} topOffset={-80}>
-                    <Heading fontSize="3" as="h4">
+                    <Heading color="var(--c-accent)" fontSize="3" as="h4">
                       Innehåll
                     </Heading>
                     <ul>
@@ -118,7 +128,7 @@ export default function Blog(props) {
             />
           </Grid>
         </Container>
-      </article>
+      </Article>
     </Layout>
   )
 }
@@ -142,6 +152,8 @@ const Sidebar = styled.div`
     }
   }
 `
+
+const Article = styled(motion.article)``
 
 const PostContent = styled.div`
   p {

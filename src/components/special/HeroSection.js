@@ -81,7 +81,7 @@ const HeroSection = () => {
         >
           <Heading
             as={motion.h1}
-            fontSize={["2rem", "46px"]}
+            fontSize={["2rem", "36px"]}
             textAlign={["center", "left"]}
             fontWeight="var(--f-weight-subheading) !important"
             mb={["2", "3"]}

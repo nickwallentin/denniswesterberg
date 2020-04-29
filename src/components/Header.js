@@ -33,13 +33,33 @@ const menuMotion = {
 }
 
 const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
+  initial: {
+    opacity: 0,
     transition: {
-      staggerChildren: 0.3,
+      staggerDirection: -1,
+      staggerChildren: 0.1,
+      when: "afterChildren",
     },
   },
+  visible: {
+    opacity: 1,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: {
+      when: "afterChildren",
+    },
+  },
+}
+
+const item = {
+  initial: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: 50 },
 }
 
 const navLinks = [
@@ -130,9 +150,9 @@ export default function Header({ overrideColor }) {
                           key="open"
                           width="24px"
                           height="24px"
-                          initial={{ scale: 0, rotate: 0 }}
-                          animate={{ scale: 1, rotate: 180 }}
-                          exit={{ scale: 0, rotate: 360 }}
+                          initial={{ rotate: 0 }}
+                          animate={{ rotate: 180 }}
+                          exit={{ rotate: 0 }}
                         >
                           <motion.path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
                         </motion.svg>
@@ -148,9 +168,9 @@ export default function Header({ overrideColor }) {
                           key="close"
                           width="24px"
                           height="24px"
-                          initial={{ scale: 0, rotate: 0 }}
-                          animate={{ scale: 1, rotate: 180 }}
-                          exit={{ scale: 0, rotate: 360 }}
+                          initial={{ rotate: 0 }}
+                          animate={{ rotate: 180 }}
+                          exit={{ rotate: 0 }}
                         >
                           <motion.path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
                         </motion.svg>
@@ -169,10 +189,6 @@ export default function Header({ overrideColor }) {
             initial={{ y: "110vh" }}
             animate={{
               y: 0,
-              transition: {
-                when: "beforeChildren",
-                ease: "easeInOut",
-              },
             }}
             exit={{ y: "110vh" }}
             transition={{
@@ -181,24 +197,17 @@ export default function Header({ overrideColor }) {
             }}
           >
             <motion.ul
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.5,
-                },
-              }}
+              exit="exit"
+              initial="initial"
+              animate="visible"
+              variants={container}
             >
-              {navLinks.map(link => (
+              {navLinks.map((link, i) => (
                 <NavLink
-                  initial={{ opacity: 0, y: 500 }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      duration: 0.6,
-                    },
-                  }}
+                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ scale: 1.1 }}
+                  key={i}
+                  variants={item}
                 >
                   <Link to={link.to}>{link.name}</Link>
                 </NavLink>
@@ -226,12 +235,13 @@ const MobileMenu = styled(motion.li)`
 `
 
 const NavLink = styled(motion.div)`
+  text-align: center;
   a {
     color: var(--c-heading);
     text-decoration: none;
     text-transform: uppercase;
     font-weight: var(--f-weight-heading);
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   margin: 2rem 0px;
 `
