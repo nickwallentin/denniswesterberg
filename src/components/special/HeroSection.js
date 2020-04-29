@@ -77,7 +77,7 @@ const HeroSection = () => {
           flexDirection="column"
           justifyContent={["flex-end", "center"]}
           width={[1, 2 / 3]}
-          height={["calc(90vh - 110px)", "inherit"]}
+          height={["calc(100vh - 110px)", "inherit"]}
         >
           <Heading
             as={motion.h1}
@@ -145,7 +145,7 @@ const StyledHeroSection = styled(Box)`
     left: 0;
     width: 100%;
     z-index: -1;
-    height: 90vh;
+    height: 100vh;
     &::before {
       display: block;
       content: " ";
