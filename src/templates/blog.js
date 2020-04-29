@@ -87,7 +87,7 @@ export default function Blog(props) {
           <Container>
             <Box variants={fadeIn} width={["1", 2 / 3]} pt={["5", "5"]}>
               <Flex mb="4">
-                {data.frontmatter.categories.length > 0 &&
+                {data.frontmatter.categories !== null &&
                   data.frontmatter.categories.map(cat => (
                     <Category key={cat}>{cat}</Category>
                   ))}
