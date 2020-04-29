@@ -33,7 +33,7 @@ fields:
   config:
     required: false
     date_format: 
-    time_format: 
+    time_format: hh:mm
     display_utc: false
   default: now
 pages:
