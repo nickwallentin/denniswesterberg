@@ -1,11 +1,13 @@
 ---
 hero_image: "/content/images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg"
-date: 2020-04-29T14:19:45Z
+date: 2020-04-29T14:19:45.000+00:00
 title: Vad sägs om NU?
 subtitle: Den ända stund som finns
 intro: Det finns en djupt rotad föreställning hos oss människor, om att stress är
   en naturlig och ofrånkomlig del av livet. Dessutom en viktig ingrediens för framgång.
-  Utan att känna stress har man helt enkelt för lite att göra.
+categories:
+- stress
+- nuet
 
 ---
 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.
