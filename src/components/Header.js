@@ -261,7 +261,7 @@ const LogoBox = styled(Link)`
   width: 100px;
 
   svg {
-    text {
+    path {
       fill: var(--i-main);
     }
   }
