@@ -25,13 +25,6 @@ const menuIcon = {
   },
 }
 
-const menuMotion = {
-  enter: {
-    y: 0,
-  },
-  initial: { y: "110vh" },
-}
-
 const container = {
   initial: {
     opacity: 0,
@@ -74,7 +67,11 @@ export default function Header({ overrideColor }) {
   const [menuOpen, setMenuOpen] = useState(false)
   return (
     <Fragment>
-      <StyledHeader className={overrideColor ? "override" : null}>
+      <Compensator menuOpen={menuOpen} />
+      <StyledHeader
+        menuOpen={menuOpen}
+        className={overrideColor ? "override" : null}
+      >
         <Container>
           <Flex pb={["3", "4", "5"]} pt={["3", "4", "5"]}>
             <LogoBox to="/">
@@ -150,7 +147,6 @@ export default function Header({ overrideColor }) {
                           key="open"
                           width="24px"
                           height="24px"
-                          initial={{ rotate: 0 }}
                           animate={{ rotate: 180 }}
                           exit={{ rotate: 0 }}
                         >
@@ -168,7 +164,6 @@ export default function Header({ overrideColor }) {
                           key="close"
                           width="24px"
                           height="24px"
-                          initial={{ rotate: 0 }}
                           animate={{ rotate: 180 }}
                           exit={{ rotate: 0 }}
                         >
@@ -220,8 +215,8 @@ export default function Header({ overrideColor }) {
   )
 }
 
-const MobileMenu = styled(motion.li)`
-  background: var(--c-bg);
+const MobileMenu = styled(motion.div)`
+  background: var(--c-bg-sec);
   position: fixed;
   top: 0;
   left: 0;
@@ -230,8 +225,11 @@ const MobileMenu = styled(motion.li)`
   padding: 120px 5% 5% 5%;
   box-sizing: border-box;
   z-index: 98;
+  box-shadow: 0px -50px 100px var(--c-bg-sec);
+`
 
-  list-style: none;
+const Compensator = styled.div`
+  margin-top: ${props => (props.menuOpen ? "109px" : "0px")};
 `
 
 const NavLink = styled(motion.div)`
@@ -290,7 +288,10 @@ const StyledHeader = styled(motion.header)`
     var(--c-bg-sec) 100%
   );
   z-index: 99;
-  position: relative;
+  position: ${props => (props.menuOpen ? "fixed" : "relative")};
+  top: 0;
+  left: 0;
+  width: 100%;
 
   nav {
     a {
