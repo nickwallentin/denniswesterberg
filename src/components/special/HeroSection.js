@@ -138,7 +138,7 @@ export default HeroSection
 
 const StyledHeroSection = styled(Box)`
   background-color: var(--bg);
-  height: 90vh;
+  height: 100vh;
   & > .gatsby-image-wrapper {
     position: absolute !important;
     top: 0;
