@@ -1,21 +1,53 @@
 import React from "react"
 import Img from "gatsby-image"
 import styled from "styled-components"
-import { graphql, useStaticQuery } from "gatsby"
+import { motion } from "framer-motion"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import Header from "../Header"
-import { Heading, Box, Container } from "../../styles/elements"
+import { Heading, Box, Flex, Container, TextLink } from "../../styles/elements"
+import ForwardIcon from "../../assets/svg/forward.svg"
+import AchievementsImage from "./AchievementsImage"
+
+const container = {
+  start: { opacity: 1 },
+  end: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+}
+
+const fadeIn = {
+  start: {
+    opacity: 0,
+    y: 30,
+  },
+  end: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+    },
+  },
+}
+
+const animateIcon = {
+  rest: { x: 0 },
+  hover: { x: 20 },
+}
 
 const HeroSection = () => {
   const data = useStaticQuery(graphql`
     query getMainImage {
-      file(name: { eq: "dennis-westerberg-index-header" }) {
+      file(name: { eq: "dennis-westerberg-index-header-lg" }) {
         desktop: childImageSharp {
           fluid(maxWidth: 1440, maxHeight: 900) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
         mobile: childImageSharp {
-          fluid(maxWidth: 375, maxHeight: 812) {
+          fluid(maxWidth: 375, maxHeight: 812, cropFocus: ENTROPY) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -24,28 +56,72 @@ const HeroSection = () => {
   `)
   const imgDesktopData = data.file.desktop.fluid
   const imgMobileData = data.file.mobile.fluid
+
+  const imgSrc = [
+    imgMobileData,
+    {
+      ...imgDesktopData,
+      media: `(min-width: 500px)`,
+    },
+  ]
   return (
-    <StyledHeroSection>
-      <Img fluid={imgDesktopData} alt="Dennis Westerberg" />
-      <Header />
-      <Container>
-        <Box width={[1, 2 / 3]}>
+    <StyledHeroSection variants={container} initial="start" animate="end">
+      <Img fluid={imgSrc} alt="Dennis Westerberg" id="header-image" />
+      <Header overrideColor={true} />
+      <Container display={["flex", "block"]} alignContent={["flex-end"]}>
+        <Flex
+          flexDirection="column"
+          justifyContent={["flex-end"]}
+          width={[1, 2 / 3]}
+          height={["calc(100vh - 110px)", "inherit"]}
+        >
           <Heading
-            as="h1"
-            fontSize={["46px"]}
+            as={motion.h1}
+            fontSize={["2rem", "46px"]}
+            textAlign={["center", "left"]}
             fontWeight="var(--f-weight-subheading) !important"
-            mb="3"
+            mb={["2", "3"]}
+            mt="4"
+            color="var(--c-heading-dark)"
+            variants={fadeIn}
           >
             Dennis Westerberg
           </Heading>
           <Heading
-            fontSize={["6rem"]}
+            variants={fadeIn}
+            fontSize={["2.5rem", "5rem"]}
+            textAlign={["center", "left"]}
             fontStyle="uppcercase"
             style={{ textTransform: "uppercase" }}
+            mb={["4", "5"]}
+            color="var(--c-heading-dark)"
           >
             Din guide till villkorslöst välmående.
           </Heading>
-        </Box>
+          <motion.div variants={fadeIn} whileHover="hover">
+            <TextLink
+              textAlign={["center", "left"]}
+              fontSize={["1.2rem", "2rem"]}
+              to="/"
+              display={["flex", "inline-flex"]}
+              width={["100%", "400px"]}
+              justifyContent={["center", "left"]}
+            >
+              Läs Dennis story{" "}
+              <motion.span style={{ display: "flex" }} variants={animateIcon}>
+                <ForwardIcon />
+              </motion.span>
+            </TextLink>
+          </motion.div>
+          <Flex mb={["2rem"]} justifyContent={["center", "flex-start"]}>
+            <Flex
+              justifyContent={["center", "flex-start"]}
+              width={["200px", "100%"]}
+            >
+              <AchievementsImage />
+            </Flex>
+          </Flex>
+        </Flex>
       </Container>
     </StyledHeroSection>
   )
@@ -53,14 +129,68 @@ const HeroSection = () => {
 
 export default HeroSection
 
-const StyledHeroSection = styled.div`
-  .gatsby-image-wrapper {
+const StyledHeroSection = styled(motion.div)`
+  height: 100vh;
+  & > .gatsby-image-wrapper {
     position: absolute !important;
     top: 0;
     left: 0;
     width: 100%;
     z-index: -1;
     height: 100vh;
+    &::before {
+      display: block;
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(
+        90deg,
+        var(--bg-dark) 0%,
+        var(--bg-dark-alpha) 60%
+      );
+      z-index: 1;
+    }
+
+    @media (max-width: 500px) {
+      &::before {
+        background: linear-gradient(
+          0deg,
+          var(--bg-dark) 0%,
+          var(--bg-dark-alpha) 100%
+        );
+      }
+    }
+  }
+  ${Container} {
+    .gatsby-image-wrapper {
+      max-width: 300px;
+      margin-top: 7rem;
+
+      @media (max-width: 500px) {
+        margin-top: 2rem;
+      }
+    }
   }
 `
-const HeroContent = styled(Box)
+
+const StyledLink = styled(Link)`
+  font-size: 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: var(--f-weight-heading);
+  color: var(--c-accent);
+  display: inline-flex;
+  align-items: center;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    margin-left: 1rem;
+    path {
+      fill: var(--c-accent);
+    }
+  }
+`

@@ -11,6 +11,7 @@ import {
   grid,
   typography,
 } from "styled-system"
+import { Link } from "gatsby"
 
 const basic = compose(
   space,
@@ -44,14 +45,39 @@ export const Grid = styled(motion.div)(
     `
 )
 
-export const Container = styled.div`
+export const Container = styled.div(
+  basic,
+  `
   max-width: 1100px;
   width: 90%;
   margin: 0 auto;
 `
+)
 export const Heading = styled(motion.h2)(
   basic,
   `
 
+`
+)
+
+export const TextLink = styled(Link)(
+  basic,
+  `
+  
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: var(--f-weight-heading);
+  color: var(--c-accent);
+  display: inline-flex;
+  align-items: center;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    margin-left: 1rem;
+    path {
+      fill: var(--c-accent);
+    }
+  }
 `
 )
