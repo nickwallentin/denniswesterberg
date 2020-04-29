@@ -10,6 +10,7 @@ import {
   flexbox,
   grid,
   typography,
+  variant,
 } from "styled-system"
 import { Link } from "gatsby"
 
@@ -60,6 +61,22 @@ export const Heading = styled(motion.h2)(
 `
 )
 
+export const Text = styled(motion.p)(
+  basic,
+  `
+font-size: 1.2rem;
+line-height: 1.8rem;
+`
+)
+
+export const BoxLink = styled(Link)(
+  basic,
+  `
+  text-decoration: none;
+  color: inherit;
+  `
+)
+
 export const TextLink = styled(Link)(
   basic,
   `
@@ -67,13 +84,13 @@ export const TextLink = styled(Link)(
   text-decoration: none;
   text-transform: uppercase;
   font-weight: var(--f-weight-heading);
-  color: var(--c-accent);
+  color: var(--c-heading);
   display: inline-flex;
   align-items: center;
 
   svg {
-    width: 40px;
-    height: 40px;
+    width: ${props => props.iconSize || "24px"};
+    height: ${props => props.iconSize || "24px"};
     margin-left: 1rem;
     path {
       fill: var(--c-accent);

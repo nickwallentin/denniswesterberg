@@ -66,10 +66,11 @@ body {
 
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
   font-weight: var(--f-weight-heading) !important;
   color: var(--c-heading);
+}
+h4,
+h5 {
+  font-weight: var(--f-weight-subheading);
 }

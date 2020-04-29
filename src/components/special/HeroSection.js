@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Header from "../Header"
 import { Heading, Box, Flex, Container, TextLink } from "../../styles/elements"
-import ForwardIcon from "../../assets/svg/forward.svg"
+import ForwardIconBig from "../../assets/svg/forward-big.svg"
 import AchievementsImage from "./AchievementsImage"
 
 const container = {
@@ -42,7 +42,7 @@ const HeroSection = () => {
     query getMainImage {
       file(name: { eq: "dennis-westerberg-index-header-lg" }) {
         desktop: childImageSharp {
-          fluid(maxWidth: 3000) {
+          fluid(maxWidth: 3000, maxHeight: 2000, cropFocus: NORTH) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -110,11 +110,13 @@ const HeroSection = () => {
               display={["flex", "inline-flex"]}
               width={["100%", "500px"]}
               justifyContent={["center", "left"]}
-              mb={["3"]}
+              mb={["3", "0"]}
+              color="var(--c-accent) !important"
+              iconSize="40px"
             >
               Läs Dennis story{" "}
               <motion.span style={{ display: "flex" }} variants={animateIcon}>
-                <ForwardIcon />
+                <ForwardIconBig />
               </motion.span>
             </TextLink>
           </motion.div>
@@ -134,7 +136,7 @@ const HeroSection = () => {
 
 export default HeroSection
 
-const StyledHeroSection = styled(motion.div)`
+const StyledHeroSection = styled(Box)`
   background-color: var(--bg);
   height: 100vh;
   & > .gatsby-image-wrapper {
@@ -173,7 +175,7 @@ const StyledHeroSection = styled(motion.div)`
   ${Container} {
     .gatsby-image-wrapper {
       max-width: 300px;
-      margin-top: 7rem;
+      margin-top: 5rem;
 
       @media (max-width: 800px) {
         margin-top: 2rem;

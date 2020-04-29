@@ -73,7 +73,9 @@ export default function Header({ overrideColor }) {
                   flex="1"
                 >
                   {navLinks.map(link => (
-                    <Link to={link.to}>{link.name}</Link>
+                    <Link key={link.name} to={link.to}>
+                      {link.name}
+                    </Link>
                   ))}
                 </Flex>
               )}
