@@ -43,7 +43,5 @@ fields:
     display_utc: false
   default: now
 pages:
-- content/posts/an-essay-on-walking.md
 - content/posts/coachning-för-ledare.md
-- content/posts/ne-te-quaesiveris-extra.md
 - content/posts/vad-sägs-om-nu.md
