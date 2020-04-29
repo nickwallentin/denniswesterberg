@@ -11,6 +11,9 @@ import Media from "react-media"
 import SEO from "../components/seo"
 import rehypeReact from "rehype-react"
 
+// Rehype components
+import PodcastEpisode from "../components/rehype/podcastEpisode"
+
 //this component handles the blur img & fade-ins
 import Img from "gatsby-image"
 import {
@@ -70,6 +73,13 @@ export default function Blog(props) {
     },
   ]
 
+  const renderAst = new rehypeReact({
+    createElement: React.createElement,
+    components: {
+      "podcast-episode": PodcastEpisode,
+    },
+  }).Compiler
+
   useEffect(() => {
     const headings = []
     const allHeadings = document.querySelectorAll("h2, h3")
@@ -103,7 +113,7 @@ export default function Blog(props) {
               >
                 {data.frontmatter.subtitle}
               </Heading>
-              <Text>{data.frontmatter.intro}</Text>
+              <Text id="intro">{data.frontmatter.intro}</Text>
             </Box>
             <Flex py={["4", "5"]}>
               <Flex>
@@ -124,20 +134,21 @@ export default function Blog(props) {
               "linear-gradient(0deg,var(--c-bg) 50%,var(--c-bg-sec) 50%)",
           }}
         >
-          <ImageContainer>
-            <Grid variants={fadeIn} width={[1, 2 / 3]}>
-              <figure>
-                <Img fluid={imgSrc} alt={data.frontmatter.title} />
-              </figure>
-            </Grid>
-          </ImageContainer>
+          {data.frontmatter.desktop !== null ? (
+            <ImageContainer>
+              <Grid variants={fadeIn} width={[1, 2 / 3]}>
+                <figure>
+                  <Img fluid={imgSrc} alt={data.frontmatter.title} />
+                </figure>
+              </Grid>
+            </ImageContainer>
+          ) : null}
         </Box>
         <Container>
           <Grid my={["5", "5"]} gridTemplateColumns={["1fr", "2fr 1fr"]}>
-            <PostContent
-              variants={fadeIn}
-              dangerouslySetInnerHTML={{ __html: data.html }}
-            />
+            <PostContent variants={fadeIn}>
+              {renderAst(data.htmlAst)}
+            </PostContent>
             <Media
               query="(min-width: 901px)"
               render={() => (
@@ -207,6 +218,10 @@ const Category = styled.div`
   }
 `
 const Article = styled(motion.article)`
+  #intro {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
   .published {
     font-size: 1rem;
     line-height: 1rem;
@@ -284,7 +299,6 @@ export const getPostData = graphql`
           }
         }
       }
-      html
       htmlAst
       headings {
         value
