@@ -18,6 +18,7 @@ module.exports = {
     "gatsby-transformer-remark",
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-yaml",
+    "gatsby-plugin-smoothscroll",
     {
       resolve: "gatsby-plugin-react-svg",
       options: {

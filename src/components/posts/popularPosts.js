@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { motion } from "framer-motion"
 import {
   Box,
   Grid,
@@ -16,7 +17,10 @@ import ForwardIcon from "../../assets/svg/forward.svg"
 
 const containerMotion = {}
 
-const itemMotion = {}
+const itemMotion = {
+  initial: { x: 0 },
+  hover: { x: 10 },
+}
 
 const PopularPosts = () => {
   const posts = usePopularPosts()
@@ -31,7 +35,10 @@ const PopularPosts = () => {
             </Heading>
             <Text mt="4">{post.node.frontmatter.intro}</Text>
             <TextLink as="span" mt="4" to="/">
-              Läs inlägget <ForwardIcon />
+              Läs inlägget{" "}
+              <motion.span variants={itemMotion}>
+                <ForwardIcon />
+              </motion.span>
             </TextLink>
           </BoxLink>
         </Box>

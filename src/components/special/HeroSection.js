@@ -177,7 +177,7 @@ const StyledHeroSection = styled(Box)`
       max-width: 300px;
       margin-top: 5rem;
 
-      @media (max-width: 800px) {
+      @media (max-width: 900px) {
         margin-top: 2rem;
       }
     }

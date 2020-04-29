@@ -1,10 +1,22 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Layout from "../components/Layout"
+import styled from "styled-components"
 import { graphql, Link } from "gatsby"
 import useBlogData from "../static_queries/useBlogData"
+import scrollTo from "gatsby-plugin-smoothscroll"
+import Sticky from "react-sticky-el"
+import Media from "react-media"
 
 //this component handles the blur img & fade-ins
 import Img from "gatsby-image"
+import {
+  Box,
+  Heading,
+  ImageContainer,
+  Container,
+  Text,
+  Grid,
+} from "../styles/elements"
 
 export default function Blog(props) {
   const data = props.data.markdownRemark
@@ -23,39 +35,152 @@ export default function Blog(props) {
     }
   }
 
+  const imgSrc = [
+    data.frontmatter.mobile.childImageSharp.fluid,
+    {
+      ...data.frontmatter.desktop.childImageSharp.fluid,
+      media: `(min-width: 500px)`,
+    },
+  ]
+
+  useEffect(() => {
+    const headings = []
+    const allHeadings = document.querySelectorAll("h2, h3")
+
+    allHeadings.forEach((heading, index) => {
+      heading.setAttribute("id", "heading-" + (index + 1))
+    })
+  }, [])
+
   return (
     <Layout>
       <article>
-        <figure>
-          <Img
-            fluid={data.frontmatter.hero_image.childImageSharp.fluid}
-            alt={data.frontmatter.title}
-          />
-        </figure>
-        <div>
-          <h1>{data.frontmatter.title}</h1>
-          <h3>{data.frontmatter.date}</h3>
-        </div>
-        <div dangerouslySetInnerHTML={{ __html: data.html }}></div>
-        <div>
-          <h2>Written By: {data.frontmatter.author}</h2>
-          <Link to={`blog/${nextSlug}`}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              version="1.1"
-              x="0px"
-              y="0px"
-              viewBox="0 0 26 26"
-              enableBackground="new 0 0 26 26"
-            >
-              <path d="M23.021,12.294l-8.714-8.715l-1.414,1.414l7.007,7.008H2.687v2h17.213l-7.007,7.006l1.414,1.414l8.714-8.713  C23.411,13.317,23.411,12.685,23.021,12.294z" />
-            </svg>
-          </Link>
-        </div>
+        <Box bg="var(--c-bg-sec)">
+          <Container>
+            <Box width={["1", 2 / 3]} py={["5", "5"]}>
+              <Heading mb="2" fontSize={["2rem", "3.5rem"]} as="h1">
+                {data.frontmatter.title}
+              </Heading>
+              <Heading
+                fontSize={["1.5rem", "2rem"]}
+                as="h4"
+                color="var(--c-accent)"
+                mb={["4"]}
+              >
+                {data.frontmatter.subtitle}
+              </Heading>
+              <Text>{data.frontmatter.intro}</Text>
+            </Box>
+          </Container>
+        </Box>
+        <Box
+          style={{
+            background:
+              "linear-gradient(0deg,var(--c-bg) 50%,var(--c-bg-sec) 50%)",
+          }}
+        >
+          <ImageContainer>
+            <Grid width={[1, 2 / 3]}>
+              <figure>
+                <Img fluid={imgSrc} alt={data.frontmatter.title} />
+              </figure>
+            </Grid>
+          </ImageContainer>
+        </Box>
+        <Container>
+          <Grid
+            my={["5", "5"]}
+            gridTemplateColumns={["1fr", "1fr 300px"]}
+            gridGap={["0", "5"]}
+          >
+            <PostContent dangerouslySetInnerHTML={{ __html: data.html }} />
+            <Media
+              query="(min-width: 901px)"
+              render={() => (
+                <Sidebar>
+                  <Sticky stickyStyle={{ top: "80px" }} topOffset={-80}>
+                    <Heading fontSize="3" as="h4">
+                      Innehåll
+                    </Heading>
+                    <ul>
+                      {data.headings.map((heading, index) => (
+                        <li
+                          onClick={() => scrollTo(`#heading-${index + 1}`)}
+                          className={"heading-" + heading.depth}
+                        >
+                          {heading.value}
+                        </li>
+                      ))}
+                    </ul>
+                  </Sticky>
+                </Sidebar>
+              )}
+            />
+          </Grid>
+        </Container>
       </article>
     </Layout>
   )
 }
+
+const Sidebar = styled.div`
+  ul {
+    li {
+      cursor: pointer;
+      color: var(--c-sub);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    li.heading-2 {
+      margin-top: 20px;
+    }
+    li.heading-3 {
+      margin-top: 10px;
+      margin-bottom: 5px;
+      margin-left: 10px;
+    }
+  }
+`
+
+const PostContent = styled.div`
+  p {
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+    font-family: var(--font-secondary);
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-top: 4rem;
+    margin-bottom: 2.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+    margin-top: 3.5rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 500px) {
+    p {
+      font-size: 1.2rem;
+      line-height: 2rem;
+    }
+    h2 {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      margin-top: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin-top: 2.8rem;
+      margin-bottom: 1.8rem;
+    }
+  }
+`
 
 //dynamic page query, must occur within each post context
 //$slug is made available by context from createPages call in gatsby-node.js
@@ -67,17 +192,30 @@ export const getPostData = graphql`
       }
       frontmatter {
         title
-        author
+        subtitle
+        intro
         date(formatString: "MMMM Do, YYYY")
-        hero_image {
+        desktop: hero_image {
           childImageSharp {
             fluid(maxWidth: 1500) {
               ...GatsbyImageSharpFluid
             }
           }
         }
+        mobile: hero_image {
+          childImageSharp {
+            fluid(maxWidth: 400, maxHeight: 500) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
       html
+      htmlAst
+      headings {
+        value
+        depth
+      }
     }
   }
 `

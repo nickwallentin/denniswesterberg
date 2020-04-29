@@ -54,6 +54,18 @@ export const Container = styled.div(
   margin: 0 auto;
 `
 )
+export const ImageContainer = styled.div(
+  basic,
+  `
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+  
+  @media(max-width:800px) {
+    width: 100%;
+  }
+`
+)
 export const Heading = styled(motion.h2)(
   basic,
   `

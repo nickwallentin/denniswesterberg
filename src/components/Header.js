@@ -123,7 +123,7 @@ export default function Header({ overrideColor }) {
               <AnimatePresence>
                 {menuOpen ? (
                   <Media
-                    query="(max-width: 800px)"
+                    query="(max-width: 900px)"
                     render={() => (
                       <MenuToggler onClick={() => setMenuOpen(prev => !prev)}>
                         <motion.svg
@@ -141,7 +141,7 @@ export default function Header({ overrideColor }) {
                   />
                 ) : (
                   <Media
-                    query="(max-width: 800px)"
+                    query="(max-width: 900px)"
                     render={() => (
                       <MenuToggler onClick={() => setMenuOpen(prev => !prev)}>
                         <motion.svg
@@ -274,7 +274,11 @@ const LogoBox = styled(Link)`
   }
 `
 const StyledHeader = styled(motion.header)`
-  background: linear-gradient(0deg, var(--c-bg-alpha) 0%, var(--c-bg) 100%);
+  background: linear-gradient(
+    180deg,
+    var(--c-bg-alpha) 0%,
+    var(--c-bg-sec) 100%
+  );
   z-index: 99;
   position: relative;
 

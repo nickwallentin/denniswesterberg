@@ -14,7 +14,7 @@
 
   --bg-dark: #0d0d0d;
   --bg-dark-alpha: #0d0d0d00;
-  --bg-sec-dark: #101010;
+  --bg-sec-dark: #17181a;
 
   --c-heading-light: #000000;
   --c-body-light: #000000;
@@ -35,6 +35,8 @@ body.light {
   /* Light theme */
 
   --c-bg: var(--bg-light);
+  --c-bg-sec: var(--bg-sec-light);
+  --c-bg-alpha: var(--bg-light-alpha);
 
   --c-heading: var(--c-heading-light);
   --c-body: var(--c-body-light);
@@ -47,6 +49,7 @@ body.dark {
   /* Dark theme */
 
   --c-bg: var(--bg-dark);
+  --c-bg-sec: var(--bg-sec-dark);
   --c-bg-alpha: var(--bg-dark-alpha);
 
   --c-heading: var(--c-heading-dark);
