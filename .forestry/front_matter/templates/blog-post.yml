@@ -32,8 +32,8 @@ fields:
   description: Date post was created
   config:
     required: false
-    date_format: 
-    time_format: hh:mm
+    date_format: MM/DD/YYYY
+    time_format: HH:mm
     display_utc: false
   default: now
 pages:
