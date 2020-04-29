@@ -2,9 +2,11 @@
 label: Podcast
 hide_body: false
 fields:
-- type: file
-  name: hero_image
-  label: hero_image
+- name: spotify_url
+  type: text
+  config:
+    required: false
+  label: Spotify URL
 - type: datetime
   name: date
   label: date
