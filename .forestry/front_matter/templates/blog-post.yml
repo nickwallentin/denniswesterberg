@@ -17,6 +17,15 @@ fields:
   config:
     required: false
   label: Underrubrik
+- name: intro
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Ingress
 - name: date
   type: datetime
   label: date
