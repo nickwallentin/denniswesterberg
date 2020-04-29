@@ -114,7 +114,7 @@ const HeroSection = () => {
               color="var(--c-accent) !important"
               iconSize="40px"
             >
-              Läs Dennis story{" "}
+              Läs Dennis story
               <motion.span style={{ display: "flex" }} variants={animateIcon}>
                 <ForwardIconBig />
               </motion.span>
