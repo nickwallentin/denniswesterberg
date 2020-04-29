@@ -239,6 +239,13 @@ const NavLink = styled(motion.div)`
 const ThemeSwitch = styled(motion.div)`
   width: 24px;
   height: 24px;
+
+  svg {
+    fill: var(--c-heading);
+    path {
+      fill: var(--c-heading);
+    }
+  }
 `
 
 const MenuToggler = styled(motion.div)`
@@ -250,9 +257,9 @@ const MenuToggler = styled(motion.div)`
     position: absolute;
     top: 0;
     left: 0;
-    fill: var(--c-heading-dark);
+    fill: var(--c-heading);
     path {
-      fill: var(--c-heading-dark);
+      fill: var(--c-heading);
     }
   }
 `
