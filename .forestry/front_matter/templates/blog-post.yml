@@ -25,6 +25,8 @@ fields:
     wysiwyg: false
     schema:
       format: markdown
+    min: 1
+    max: 155
   label: Ingress
 - name: date
   type: datetime
