@@ -275,6 +275,7 @@ const MenuToggler = styled(motion.div)`
     top: 0;
     left: 0;
     fill: var(--c-heading);
+    transform-origin: 12px 12px !important;
     path {
       fill: var(--c-heading);
     }
