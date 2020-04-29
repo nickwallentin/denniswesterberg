@@ -114,8 +114,9 @@ export default function Header({ overrideColor }) {
                       }
                     >
                       <ThemeSwitch
-                        initial={{ rotate: 0 }}
-                        whileTap={{ rotate: 360 }}
+                        initial={{ scale: 1, rotate: 0 }}
+                        whileTap={{ scale: 0.8, rotate: 360 }}
+                        whileHover={{ scale: 1.2 }}
                       >
                         {theme === "light" ? (
                           <motion.svg width="24px" height="24px">
@@ -255,7 +256,7 @@ const NavLink = styled(motion.div)`
 const ThemeSwitch = styled(motion.div)`
   width: 24px;
   height: 24px;
-
+  cursor: pointer;
   svg {
     fill: var(--c-heading);
     path {

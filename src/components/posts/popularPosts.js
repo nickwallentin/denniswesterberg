@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { motion } from "framer-motion"
 import {
   Box,
+  Flex,
   Grid,
   Heading,
   Text,
@@ -24,6 +25,7 @@ const itemMotion = {
 
 const PopularPosts = () => {
   const posts = usePopularPosts()
+
   return (
     <Grid mt={["4", "5"]} gridTemplateColumns={["1fr", "1fr 1fr"]} gridGap="5">
       {posts.map(post => (
@@ -48,3 +50,10 @@ const PopularPosts = () => {
 }
 
 export default PopularPosts
+
+const Category = styled.div`
+  margin-bottom: 1rem;
+  margin-right: 5px;
+
+  text-transform: capitalize;
+`

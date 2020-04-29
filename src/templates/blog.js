@@ -4,9 +4,12 @@ import styled from "styled-components"
 import { motion } from "framer-motion"
 import { graphql, Link } from "gatsby"
 import useBlogData from "../static_queries/useBlogData"
+import useAuthorData from "../static_queries/useAuthorData"
 import scrollTo from "gatsby-plugin-smoothscroll"
 import Sticky from "react-sticky-el"
 import Media from "react-media"
+import SEO from "../components/seo"
+import rehypeReact from "rehype-react"
 
 //this component handles the blur img & fade-ins
 import Img from "gatsby-image"
@@ -17,7 +20,20 @@ import {
   Container,
   Text,
   Grid,
+  Flex,
 } from "../styles/elements"
+
+const container = {
+  initial: {
+    opacity: 1,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+}
 
 const fadeIn = {
   initial: {
@@ -31,6 +47,7 @@ const fadeIn = {
 export default function Blog(props) {
   const data = props.data.markdownRemark
   const allBlogData = useBlogData()
+  const allAuthorData = useAuthorData()
   const nextSlug = getNextSlug(data.fields.slug)
 
   function getNextSlug(slug) {
@@ -64,10 +81,17 @@ export default function Blog(props) {
 
   return (
     <Layout>
-      <Article initial="initial" animate="visible">
+      <SEO title={data.frontmatter.title} />
+      <Article variants={container} initial="initial" animate="visible">
         <Box bg="var(--c-bg-sec)">
           <Container>
-            <Box variants={fadeIn} width={["1", 2 / 3]} py={["5", "5"]}>
+            <Box variants={fadeIn} width={["1", 2 / 3]} pt={["5", "5"]}>
+              <Flex mb="4">
+                {data.frontmatter.categories.length > 0 &&
+                  data.frontmatter.categories.map(cat => (
+                    <Category key={cat}>{cat}</Category>
+                  ))}
+              </Flex>
               <Heading mb="2" fontSize={["2rem", "3.5rem"]} as="h1">
                 {data.frontmatter.title}
               </Heading>
@@ -81,6 +105,17 @@ export default function Blog(props) {
               </Heading>
               <Text>{data.frontmatter.intro}</Text>
             </Box>
+            <Flex py={["4", "5"]}>
+              <Flex>
+                <Avatar>
+                  <Img fluid={allAuthorData.file.childImageSharp.fluid} />
+                </Avatar>
+                <Box ml="3">
+                  <Text color="var(--c-heading)">Dennis Westerberg</Text>
+                  <Text className="published">{data.frontmatter.date}</Text>
+                </Box>
+              </Flex>
+            </Flex>
           </Container>
         </Box>
         <Box
@@ -90,25 +125,19 @@ export default function Blog(props) {
           }}
         >
           <ImageContainer>
-            <Grid width={[1, 2 / 3]}>
-              <iframe
-                src="https://open.spotify.com/embed-podcast/episode/5xyeTToWHIe23FhuJdoaeE"
-                width="100%"
-                height="232"
-                frameborder="0"
-                allowtransparency="true"
-                allow="encrypted-media"
-              ></iframe>
+            <Grid variants={fadeIn} width={[1, 2 / 3]}>
+              <figure>
+                <Img fluid={imgSrc} alt={data.frontmatter.title} />
+              </figure>
             </Grid>
           </ImageContainer>
         </Box>
         <Container>
-          <Grid
-            my={["5", "5"]}
-            gridTemplateColumns={["1fr", "1fr 300px"]}
-            gridGap={["0", "5"]}
-          >
-            <PostContent dangerouslySetInnerHTML={{ __html: data.html }} />
+          <Grid my={["5", "5"]} gridTemplateColumns={["1fr", "2fr 1fr"]}>
+            <PostContent
+              variants={fadeIn}
+              dangerouslySetInnerHTML={{ __html: data.html }}
+            />
             <Media
               query="(min-width: 901px)"
               render={() => (
@@ -139,6 +168,7 @@ export default function Blog(props) {
 }
 
 const Sidebar = styled.div`
+  padding-left: 4rem;
   ul {
     li {
       cursor: pointer;
@@ -158,9 +188,35 @@ const Sidebar = styled.div`
   }
 `
 
-const Article = styled(motion.article)``
+const Avatar = styled.figure`
+  width: 50px;
+  height: 50px;
+  border-radius: 99px;
+  overflow: hidden;
+`
 
-const PostContent = styled.div`
+const Category = styled.div`
+  text-transform: capitalize;
+  margin-right: 5px;
+  font-size: 1.5rem;
+  &:after {
+    content: ",";
+  }
+  &:last-of-type:after {
+    content: "";
+  }
+`
+const Article = styled(motion.article)`
+  .published {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+`
+
+const PostContent = styled(motion.div)`
+  .gatsby-resp-image-wrapper {
+    margin: 4rem 0px;
+  }
   p {
     font-size: 1.5rem;
     line-height: 2.3rem;
@@ -211,7 +267,8 @@ export const getPostData = graphql`
         title
         subtitle
         intro
-        date(formatString: "MMMM Do, YYYY")
+        categories
+        date(formatString: "D MMMM, YYYY", locale: "sv")
         desktop: hero_image {
           childImageSharp {
             fluid(maxWidth: 1500) {
@@ -233,6 +290,7 @@ export const getPostData = graphql`
         value
         depth
       }
+      timeToRead
     }
   }
 `
