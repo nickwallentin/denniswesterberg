@@ -2,7 +2,7 @@
 
 :root {
   /* Set root variables */
-  --font: "Futura PT", Arial, Helvetica, sans-serif;
+  --font: futura-pt, Arial, Helvetica, sans-serif;
   --font-secondary: Georgia, "Times New Roman", Times, serif;
   --f-weight-heading: 700;
   --f-weight-subheading: 300;
