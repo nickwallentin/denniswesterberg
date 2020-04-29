@@ -77,7 +77,7 @@ const HeroSection = () => {
           flexDirection="column"
           justifyContent={["flex-end", "center"]}
           width={[1, 2 / 3]}
-          height={["calc(100vh - 110px)", "inherit"]}
+          height={["calc(90vh - 110px)", "inherit"]}
         >
           <Heading
             as={motion.h1}
@@ -138,14 +138,14 @@ export default HeroSection
 
 const StyledHeroSection = styled(Box)`
   background-color: var(--bg);
-  height: 100vh;
+  height: 90vh;
   & > .gatsby-image-wrapper {
     position: absolute !important;
     top: 0;
     left: 0;
     width: 100%;
     z-index: -1;
-    height: 100vh;
+    height: 90vh;
     &::before {
       display: block;
       content: " ";
