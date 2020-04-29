@@ -1,0 +1,22 @@
+---
+label: Podcast
+hide_body: false
+fields:
+- type: file
+  name: hero_image
+  label: hero_image
+- type: datetime
+  name: date
+  label: date
+- type: text
+  name: title
+  label: title
+- type: text
+  name: subtitle
+  label: subtitle
+- type: textarea
+  name: intro
+  label: intro
+- type: list
+  name: categories
+  label: categories
