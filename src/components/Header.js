@@ -181,6 +181,7 @@ export default function Header({ overrideColor }) {
       <AnimatePresence>
         {menuOpen && (
           <MobileMenu
+            className={overrideColor ? "override" : null}
             initial={{ y: "110vh" }}
             animate={{
               y: 0,
@@ -226,6 +227,13 @@ const MobileMenu = styled(motion.div)`
   box-sizing: border-box;
   z-index: 98;
   box-shadow: 0px -50px 100px var(--c-bg-sec);
+
+  &.override {
+    background: var(--bg-sec-dark) !important;
+    a {
+      color: var(--c-heading-dark);
+    }
+  }
 `
 
 const Compensator = styled.div`

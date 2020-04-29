@@ -91,9 +91,14 @@ export default function Blog(props) {
         >
           <ImageContainer>
             <Grid width={[1, 2 / 3]}>
-              <figure>
-                <Img fluid={imgSrc} alt={data.frontmatter.title} />
-              </figure>
+              <iframe
+                src="https://open.spotify.com/embed-podcast/episode/5xyeTToWHIe23FhuJdoaeE"
+                width="100%"
+                height="232"
+                frameborder="0"
+                allowtransparency="true"
+                allow="encrypted-media"
+              ></iframe>
             </Grid>
           </ImageContainer>
         </Box>

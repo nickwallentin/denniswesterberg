@@ -11,7 +11,7 @@ export default function IndexPage() {
   return (
     <Fragment>
       <HeroSection />
-      <Box py={["6"]}>
+      <Box py={["5", "6"]}>
         <Container>
           <Heading
             as="h4"

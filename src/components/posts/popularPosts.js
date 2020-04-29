@@ -25,7 +25,7 @@ const itemMotion = {
 const PopularPosts = () => {
   const posts = usePopularPosts()
   return (
-    <Grid mt="5" gridTemplateColumns={["1fr", "1fr 1fr"]} gridGap="5">
+    <Grid mt={["4", "5"]} gridTemplateColumns={["1fr", "1fr 1fr"]} gridGap="5">
       {posts.map(post => (
         <Box key={post.node.id} whileHover="hover">
           <BoxLink to={post.node.fields.slug}>

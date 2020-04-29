@@ -85,5 +85,15 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-source-facebook`,
+      options: {
+        places: [`dennis.michael.westerberg`], // Can be either a numeric ID or the URL ID
+        params: {
+          fields: "hours, posts { message, created_time }", // See Facebooks API to see what you can query for
+        },
+        key: process.env.FACEBOOK_GRAPH_TOKEN, // You will need to create a Facebook application and go through review in order to get an API token.
+      },
+    },
   ],
 }
