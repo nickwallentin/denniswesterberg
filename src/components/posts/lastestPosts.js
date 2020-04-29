@@ -16,9 +16,24 @@ import { Link } from "gatsby"
 
 import ForwardIcon from "../../assets/svg/forward.svg"
 
-const containerMotion = {}
+const containerMotion = {
+  initial: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+}
 
 const itemMotion = {
+  initial: { opacity: 0 },
+  visible: {
+    opacity: 1,
+  },
+}
+
+const hoverMotion = {
   initial: { x: 0 },
   hover: { x: 10 },
 }
@@ -27,9 +42,15 @@ const LatestPosts = () => {
   const posts = useBlogData()
 
   return (
-    <Grid mt={["4", "5"]} gridGap="5">
+    <Grid
+      mt={["4", "5"]}
+      gridGap="5"
+      initial="initial"
+      animate="visible"
+      variants={containerMotion}
+    >
       {posts.map(post => (
-        <Box key={post.node.id} whileHover="hover">
+        <Box variants={itemMotion} key={post.node.id} whileHover="hover">
           <BoxLink to={post.node.fields.slug}>
             <Heading fontSize="2rem">{post.node.frontmatter.title}</Heading>
             <Heading as="h4" mt="2" fontSize="1.5rem" color="var(--c-accent)">
@@ -38,7 +59,7 @@ const LatestPosts = () => {
             <Text mt="4">{post.node.frontmatter.intro}</Text>
             <TextLink as="span" mt="4" to="/">
               Läs inlägget
-              <motion.span variants={itemMotion}>
+              <motion.span variants={hoverMotion}>
                 <ForwardIcon />
               </motion.span>
             </TextLink>

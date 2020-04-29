@@ -9,7 +9,7 @@ export default function useBlogData() {
             id
             frontmatter {
               date(formatString: "MMMM Do, YYYY")
-              author
+              categories
               title
               intro
               hero_image {

@@ -60,7 +60,7 @@ const navLinks = [
   { name: "Coach", to: "/" },
   { name: "Böcker", to: "/" },
   { name: "Podcast", to: "/" },
-  { name: "Blogg", to: "/" },
+  { name: "Blogg", to: "/blogg" },
 ]
 
 export default function Header({ overrideColor }) {
