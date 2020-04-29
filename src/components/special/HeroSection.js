@@ -42,7 +42,7 @@ const HeroSection = () => {
     query getMainImage {
       file(name: { eq: "dennis-westerberg-index-header-lg" }) {
         desktop: childImageSharp {
-          fluid(maxWidth: 1440, maxHeight: 900) {
+          fluid(maxWidth: 3000) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -68,10 +68,14 @@ const HeroSection = () => {
     <StyledHeroSection variants={container} initial="start" animate="end">
       <Img fluid={imgSrc} alt="Dennis Westerberg" id="header-image" />
       <Header overrideColor={true} />
-      <Container display={["flex", "block"]} alignContent={["flex-end"]}>
+      <Container
+        height={["calc(100vh - 205px)"]}
+        display={["flex", "block"]}
+        alignContent={["flex-end"]}
+      >
         <Flex
           flexDirection="column"
-          justifyContent={["flex-end"]}
+          justifyContent={["flex-end", "center"]}
           width={[1, 2 / 3]}
           height={["calc(100vh - 110px)", "inherit"]}
         >
@@ -89,11 +93,11 @@ const HeroSection = () => {
           </Heading>
           <Heading
             variants={fadeIn}
-            fontSize={["2.5rem", "5rem"]}
+            fontSize={["2.5rem", "4rem", "5rem"]}
             textAlign={["center", "left"]}
             fontStyle="uppcercase"
             style={{ textTransform: "uppercase" }}
-            mb={["4", "5"]}
+            mb={["3", "5"]}
             color="var(--c-heading-dark)"
           >
             Din guide till villkorslöst välmående.
@@ -101,11 +105,12 @@ const HeroSection = () => {
           <motion.div variants={fadeIn} whileHover="hover">
             <TextLink
               textAlign={["center", "left"]}
-              fontSize={["1.2rem", "2rem"]}
+              fontSize={["1.2rem", "2.5rem"]}
               to="/"
               display={["flex", "inline-flex"]}
-              width={["100%", "400px"]}
+              width={["100%", "500px"]}
               justifyContent={["center", "left"]}
+              mb={["3"]}
             >
               Läs Dennis story{" "}
               <motion.span style={{ display: "flex" }} variants={animateIcon}>
@@ -130,6 +135,7 @@ const HeroSection = () => {
 export default HeroSection
 
 const StyledHeroSection = styled(motion.div)`
+  background-color: var(--bg);
   height: 100vh;
   & > .gatsby-image-wrapper {
     position: absolute !important;
@@ -169,7 +175,7 @@ const StyledHeroSection = styled(motion.div)`
       max-width: 300px;
       margin-top: 7rem;
 
-      @media (max-width: 500px) {
+      @media (max-width: 800px) {
         margin-top: 2rem;
       }
     }
