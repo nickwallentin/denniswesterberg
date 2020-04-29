@@ -110,3 +110,28 @@ export const TextLink = styled(Link)(
   }
 `
 )
+
+export const Button = styled(Link)(
+  basic,
+  `
+  display: flex !important;
+  align-items: center;
+  color: var(--c-heading);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: var(--f-weight-heading);
+  display: inline-block;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+
+  svg {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    path {
+      fill: var(--c-heading);
+    }
+  }
+  `
+)

@@ -13,6 +13,7 @@
   --bg-sec-light: #eeeeee;
 
   --bg-dark: #0d0d0d;
+  --bg-pop-dark: #ffffff20;
   --bg-dark-alpha: #0d0d0d00;
   --bg-sec-dark: #17181a;
 
@@ -51,6 +52,7 @@ body.dark {
   --c-bg: var(--bg-dark);
   --c-bg-sec: var(--bg-sec-dark);
   --c-bg-alpha: var(--bg-dark-alpha);
+  --c-bg-pop: var(--bg-pop-dark);
 
   --c-heading: var(--c-heading-dark);
   --c-body: var(--c-body-dark);
