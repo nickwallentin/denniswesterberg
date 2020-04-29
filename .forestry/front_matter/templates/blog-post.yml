@@ -28,6 +28,10 @@ fields:
     min: 1
     max: 160
   label: Ingress
+- name: categories
+  type: tag_list
+  default: []
+  label: Ämne
 - name: date
   type: datetime
   label: date
