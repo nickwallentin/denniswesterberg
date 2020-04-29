@@ -43,10 +43,5 @@ fields:
     display_utc: false
   default: now
 pages:
-- content/posts/an-essay-on-walking.md
 - content/posts/coachning-för-ledare.md
-- content/posts/ne-te-quaesiveris-extra.md
-- content/posts/on-the-geneology-of-morals.md
-- content/posts/song-of-myself.md
-- content/posts/sunflower-sutra.md
 - content/posts/vad-sägs-om-nu.md
