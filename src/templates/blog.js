@@ -11,6 +11,7 @@ import Media from "react-media"
 import SEO from "../components/seo"
 import rehypeReact from "rehype-react"
 
+import DownArrowIcon from "../assets/svg/down.svg"
 // Rehype components
 import PodcastEpisode from "../components/rehype/podcastEpisode"
 
@@ -115,7 +116,11 @@ export default function Blog(props) {
               </Heading>
               <Text id="intro">{data.frontmatter.intro}</Text>
             </Box>
-            <Flex py={["4", "5"]}>
+            <Flex
+              py={["4", "5"]}
+              width={["1", 2 / 3]}
+              justifyContent="space-between"
+            >
               <Flex>
                 <Avatar>
                   <Img fluid={allAuthorData.file.childImageSharp.fluid} />
@@ -124,6 +129,13 @@ export default function Blog(props) {
                   <Text color="var(--c-heading)">Dennis Westerberg</Text>
                   <Text className="published">{data.frontmatter.date}</Text>
                 </Box>
+              </Flex>
+              <Flex
+                style={{ cursor: "pointer" }}
+                onClick={() => scrollTo("#body")}
+                alignItems="center"
+              >
+                <DownArrowIcon />
               </Flex>
             </Flex>
           </Container>
@@ -145,7 +157,11 @@ export default function Blog(props) {
           ) : null}
         </Box>
         <Container>
-          <Grid my={["5", "5"]} gridTemplateColumns={["1fr", "2fr 1fr"]}>
+          <Grid
+            id="body"
+            py={["5", "5"]}
+            gridTemplateColumns={["1fr", "2fr 1fr"]}
+          >
             <PostContent variants={fadeIn}>
               {renderAst(data.htmlAst)}
             </PostContent>
@@ -158,6 +174,12 @@ export default function Blog(props) {
                       Innehåll
                     </Heading>
                     <ul>
+                      <li
+                        onClick={() => scrollTo(`#body`)}
+                        className="heading-2"
+                      >
+                        Introduktion
+                      </li>
                       {data.headings.map((heading, index) => (
                         <li
                           onClick={() => scrollTo(`#heading-${index + 1}`)}
@@ -225,6 +247,11 @@ const Article = styled(motion.article)`
   .published {
     font-size: 1rem;
     line-height: 1rem;
+  }
+  svg {
+    path {
+      fill: var(--c-heading);
+    }
   }
 `
 

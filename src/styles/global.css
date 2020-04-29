@@ -9,6 +9,7 @@
   --f-weight-body: 300;
 
   --bg-light: #ffffff;
+  --bg-pop-light: #0d0d0d10;
   --bg-light-alpha: #ffffff00;
   --bg-sec-light: #eeeeee;
 
@@ -38,6 +39,7 @@ body.light {
   --c-bg: var(--bg-light);
   --c-bg-sec: var(--bg-sec-light);
   --c-bg-alpha: var(--bg-light-alpha);
+  --c-bg-pop: var(--bg-pop-light);
 
   --c-heading: var(--c-heading-light);
   --c-body: var(--c-body-light);
