@@ -42,13 +42,18 @@ const HeroSection = () => {
     query getMainImage {
       file(name: { eq: "dennis-westerberg-index-header-lg" }) {
         desktop: childImageSharp {
-          fluid(maxWidth: 3000, maxHeight: 2000, cropFocus: NORTH) {
-            ...GatsbyImageSharpFluid_withWebp
+          fluid(
+            maxWidth: 3000
+            maxHeight: 2000
+            cropFocus: NORTH
+            traceSVG: { background: "#0C0C0C", color: "#17181a", threshold: 40 }
+          ) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
         mobile: childImageSharp {
           fluid(maxWidth: 375, maxHeight: 812, cropFocus: ENTROPY) {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
       }
