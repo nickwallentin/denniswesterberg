@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { motion } from "framer-motion"
+import Img from "gatsby-image"
 import {
   Box,
   Flex,
@@ -43,7 +44,7 @@ const LatestPosts = () => {
 
   return (
     <Grid
-      mt={["4", "5"]}
+      my={["4", "5"]}
       gridGap="5"
       initial="initial"
       animate="visible"
@@ -52,10 +53,16 @@ const LatestPosts = () => {
       {posts.map(post => (
         <Box variants={itemMotion} key={post.node.id} whileHover="hover">
           <BoxLink to={post.node.fields.slug}>
-            <Heading fontSize="2rem">{post.node.frontmatter.title}</Heading>
+            <Heading fontSize={["2rem", "3rem"]}>
+              {post.node.frontmatter.title}
+            </Heading>
             <Heading as="h4" mt="2" fontSize="1.5rem" color="var(--c-accent)">
               {post.node.frontmatter.subtitle}
             </Heading>
+            <Img
+              style={{ margin: "2rem 0rem", borderRadius: "4px" }}
+              fluid={post.node.frontmatter.hero_image.listImage.fluid}
+            ></Img>
             <Text mt="4">{post.node.frontmatter.intro}</Text>
             <TextLink as="span" mt="4" to="/">
               Läs inlägget

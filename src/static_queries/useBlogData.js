@@ -11,11 +11,13 @@ export default function useBlogData() {
               date(formatString: "MMMM Do, YYYY")
               categories
               title
+
+              subtitle
               intro
               hero_image {
-                childImageSharp {
-                  fluid(maxWidth: 800) {
-                    ...GatsbyImageSharpFluid
+                listImage: childImageSharp {
+                  fluid(maxWidth: 800, maxHeight: 400) {
+                    ...GatsbyImageSharpFluid_withWebp
                   }
                 }
               }

@@ -23,7 +23,7 @@ const BlogPage = () => {
       <SEO title="Blogg"></SEO>
       <Box bg="var(--c-bg-sec)">
         <Container>
-          <Grid gridTemplateColumns={["1fr", "2fr 1fr"]} py="5">
+          <Grid gridTemplateColumns={["1fr", "1fr 1fr"]} py="5">
             <Box>
               <Heading mb="4" fontSize="3.5rem" as="h1">
                 Blogg
