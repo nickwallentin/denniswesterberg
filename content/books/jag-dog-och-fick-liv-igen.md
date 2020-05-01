@@ -8,6 +8,7 @@ intro: |-
   Therese Lindgren och Nicole Falciani är inläsare av ljudboksversionen. Det här är bokversionen.
 price: "95"
 buy_url: https://www.adlibris.com/se/bok/jag-dog-och-fick-liv-igen-9789188375612
+image: "/content/images/jag-dog-och-fick-liv-igen-1.jpg"
 
 ---
 Jag visste precis vad som väntade. Tåget skulle dyka upp vid åkerns slut och sedan närma sig, först som ett sött modelltåg och sedan som en monstruös stålbest. Smack. Jag skulle inte känna någonting alls. Så skönt. Det var precis det jag önskade. Jag hade känt tillräckligt. Men då dök Johanna upp, Johanna K. Som en viskning.
