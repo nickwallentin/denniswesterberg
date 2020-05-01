@@ -15,24 +15,6 @@ Allt det arbete som jag gör idag – som föreläsare, författare eller coach 
 
 I det här blogginlägget berättar jag, så tydligt jag kan, om hur jag ser på de tre principerna idag, och varför just dessa principer är så värdefulla att förstå.
 
-Jag gör dessutom mitt yttersta för att svara på följande frågor, och fler därtill:
-
-* Vilka är de tre principerna?
-* Vem upptäckte de tre principerna?
-* När upptäcktes de tre principerna?
-* Varifrån kommer de tre principerna?
-* Vad betyder ”principer” i sammanhanget?
-* Hur förändrar de tre principerna människors liv?
-* Varför är principerna just tre till antalet – inte fler eller färre?
-* Vilken betydelse har de tre principerna för människor?
-* Vilket förhållande ha de tre principerna till olika religioner eller olika filosofiska inriktningar?
-* Vilka böcker beskriver de tre principerna på bästa sätt?
-* Var hittar jag mer information om de tre principerna?
-* Vart sprider sig de tre principerna just nu?
-* Hur hittar man någon som coachar enligt de tre principerna?
-* Vad säger vetenskapen och forskningen om de tre principerna?
-* Vad säger den traditionella psykologin om de tre principerna?
-
 Jag hoppas att mitt blogginlägg kan ge dig svar på en del frågor som du har kring de tre principerna, men också en ökad nyfikenhet för att vilja förstå mer framöver.
 
 ## Vilka är de tre principerna?
