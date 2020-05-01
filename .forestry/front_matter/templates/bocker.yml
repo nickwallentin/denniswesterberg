@@ -26,3 +26,5 @@ fields:
     schema:
       format: markdown
   label: Kort beskrivning
+pages:
+- content/books/bara-en-tanke.md
