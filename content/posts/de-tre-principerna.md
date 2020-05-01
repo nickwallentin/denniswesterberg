@@ -336,7 +336,7 @@ Det mesta materialet kring de tre principerna finns såklart utanför Sveriges g
 
 Besök gärna [Tomas och Dennis](https://tomasochdennis.se/) hemsida. Där finner du flera böcker och videokurser, på svenska. Vi har dessutom en podcast, med namnet ”Tomas och Dennis”. Den finner du bl.a. på Podcaster, [iTunes](https://itunes.apple.com/se/podcast/tomas-och-dennis-podcast/id1055134052?mt=2), [Acast](https://play.acast.com/s/tomasochdennis), eller via [tomasochdennis.se](http://tomasochdennis.se/).
 
-<youtube-embed link="[https://www.youtube.com/watch?v=MvQrCE2y9Kk&t=7s](https://www.youtube.com/watch?v=MvQrCE2y9Kk&t=7s "https://www.youtube.com/watch?v=MvQrCE2y9Kk&t=7s")"></youtube-embed>
+<youtube-embed id="MvQrCE2y9Kk"></youtube-embed>
 
 **En föreläsning med Tomas och Dennis (Dennis till vänster och Tomas till höger).**
 
