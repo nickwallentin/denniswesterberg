@@ -318,23 +318,23 @@ De tre principerna sprider sig nu som en löpeld över världen. Varje dag fylls
 
 Gör en [googling](https://www.google.se/search?q=The+three+principles&oq=the+three&aqs=chrome.0.69i59j69i57j0j69i60j0l2.3126j0j8&sourceid=chrome&ie=UTF-8) med sökorden ”De tre principerna”, eller på engelska ”The three principles”, så får du mängder med förslag på sajter som presenterar principerna.
 
-Det som jag personligen föreslår, om du vill lära dig mer om principerna, är att du börjar med att kolla in en video med [Michael Neill](https://www.michaelneill.org/), på YouTube. Den finns i tre delar. Del ett finner du här: [https://youtu.be/OmnvLnh3ieY](https://youtu.be/OmnvLnh3ieY "https://youtu.be/OmnvLnh3ieY")
+Det som jag personligen föreslår, om du vill lära dig mer om principerna, är att du börjar med att kolla in en video med [Michael Neill](https://www.michaelneill.org/), på YouTube. Den finns i tre delar. Del ett finner du här: 
 
 <youtube-embed id="OmnvLnh3ieY"></youtube-embed>
 
-Därefter tycker jag att du ska gå direkt till källan. Alltså att ta del av olika videoklipp med [Sydney Banks](http://sydbanks.com/). Detta är ett av mina favoritklipp: [https://youtu.be/NHpnzI49JbU](https://youtu.be/OmnvLnh3ieY "https://youtu.be/OmnvLnh3ieY")
+Därefter tycker jag att du ska gå direkt till källan. Alltså att ta del av olika videoklipp med [Sydney Banks](http://sydbanks.com/). Detta är ett av mina favoritklipp: 
 
 <youtube-embed id="NHpnzI49JbU"></youtube-embed>
 
-En fantastisk resurs finner du via [Three Principles Movies](http://www.threeprinciplesmovies.com/). Mängder med videoklipp, och massor av kvalitetslänkar. Även herr Westerberg finns med på ett hörn, minsann (Intervju med [Dennis Westerberg](https://www.denniswesterberg.com/), från YouTube: [https://www.youtube.com/watch?v=uT5lsspajpk](https://youtu.be/OmnvLnh3ieY "https://youtu.be/OmnvLnh3ieY"))
+En fantastisk resurs finner du via [Three Principles Movies](http://www.threeprinciplesmovies.com/). Mängder med videoklipp, och massor av kvalitetslänkar. Även herr Westerberg finns med på ett hörn, minsann (Intervju med [Dennis Westerberg](https://www.denniswesterberg.com/), från YouTube:)
 
 <youtube-embed id="uT5lsspajpk"></youtube-embed>
 
-Missa inte psykiatrikern [Bill Pettit](https://thedrspettit.com/), som beskriver hur insikter kring de tre principerna har väckt välmåendet till liv hos mängder med patienter, som han ”behandlat” under sin karriär. Ett fantastiskt klipp: [https://youtu.be/UbnxCd2VrtA](https://youtu.be/OmnvLnh3ieY "https://youtu.be/OmnvLnh3ieY")
+Missa inte psykiatrikern [Bill Pettit](https://thedrspettit.com/), som beskriver hur insikter kring de tre principerna har väckt välmåendet till liv hos mängder med patienter, som han ”behandlat” under sin karriär. Ett fantastiskt klipp: 
 
 <youtube-embed id="UbnxCd2VrtA"></youtube-embed>
 
-Glöm inte att ta del av de klokheter som psykologen [George Pransky](http://pranskyandassociates.com/) bjuder på. George Pransky var en av de först psykologer träffade Sydney Banks, efter att herr Banks gjort sin upptäckt. Jag gillar detta klipp särskilt mycket: [https://youtu.be/35Cr_TUbB5I](https://youtu.be/OmnvLnh3ieY "https://youtu.be/OmnvLnh3ieY")
+Glöm inte att ta del av de klokheter som psykologen [George Pransky](http://pranskyandassociates.com/) bjuder på. George Pransky var en av de först psykologer träffade Sydney Banks, efter att herr Banks gjort sin upptäckt. Jag gillar detta klipp särskilt mycket: 
 
 <youtube-embed id="35Cr_TUbB5I"></youtube-embed>
 
