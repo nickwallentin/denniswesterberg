@@ -311,7 +311,7 @@ Andra föredrar exempelvis [Michael Neills](https://www.amazon.com/Michael-Neill
 
 ![Bara en tanke – din guide till villkorslöst välmående](/content/images/bara-en-tanke.jpg "Bara en tanke – din guide till villkorslöst välmående")
 
-<book title="Bara en tanke"></book>
+<book-display title="Bara en tanke"></book-display>
 
 Såklart har jag ett eget bidrag, nämligen [Bara en tanke – din guide till villkorslöst välmående](https://www.denniswesterberg.com/shop/bocker/bara-en-tanke/), som gavs ut redan 2015.
 
