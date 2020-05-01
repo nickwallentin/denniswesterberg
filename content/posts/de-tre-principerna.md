@@ -330,7 +330,7 @@ Glöm inte att ta del av de klokheter som psykologen [George Pransky](http://pra
 
 Ett annat sätt, än att kolla in olika klipp på YouTube, är att delta i någon kurs/utbildning som syftar till att presentera principerna. Om du är bekväm med engelskspråkig utbildning, kan jag rekommendera kurser av [Elise Spittle](https://www.3phd.net/), [Dr Aaron Turner](http://onethought.com/), [George Pransky](http://www.pranskyandassociates.com/) eller [Jack Pransky](https://insideoutunderstanding.com/).
 
-### Resuser på svenska
+### Resurser på svenska
 
 Det mesta materialet kring de tre principerna finns såklart utanför Sveriges gränser, författat och uttryck på engelska. [Jag själv](https://denniswesterberg.com/) och [Tomas Lydahl](https://www.wowmarketing.se/), har dock producerat en hel del för den svenska marknaden. En del är gratis. Annat kostar pengar.
 
