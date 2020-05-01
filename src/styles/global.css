@@ -23,7 +23,8 @@
   /* Set root variables */
   --font: futura-pt, Arial, Helvetica, sans-serif;
   --font-secondary: Georgia, "Times New Roman", Times, serif;
-  --f-weight-heading: 700;
+  --f-weight-fat: 700;
+  --f-weight-heading: 500;
   --f-weight-subheading: 300;
   --f-weight-body: 300;
 
@@ -110,4 +111,9 @@ h3 {
 h4,
 h5 {
   font-weight: var(--f-weight-subheading);
+}
+
+a {
+  color: var(--c-accent);
+  text-decoration: none;
 }

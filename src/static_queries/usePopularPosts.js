@@ -4,7 +4,10 @@ export default function usePopularPosts() {
   const data = useStaticQuery(graphql`
     query getPopularPosts {
       allMarkdownRemark(
-        limit: 2
+        filter: {
+          fileAbsolutePath: { regex: "/posts/" }
+          frontmatter: { featured: { eq: true } }
+        }
         sort: { fields: frontmatter___date, order: DESC }
       ) {
         edges {

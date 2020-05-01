@@ -22,7 +22,7 @@ import SydkraftLogo from "../assets/svg/clients/sydkraft.svg"
 
 const SpeakerPage = () => {
   const data = useStaticQuery(graphql`
-    query getMainSpeakerImager {
+    query getCoachingImages {
       allFile(
         filter: { relativeDirectory: { eq: "images/forelasare" } }
         sort: { fields: name }
@@ -59,7 +59,7 @@ const SpeakerPage = () => {
                   as="h1"
                   fontSize="1.5rem"
                 >
-                  Boka föreläsning
+                  Boka coaching
                 </Heading>
                 <Text
                   fontSize={["2rem !important", "2.8rem !important"]}
@@ -68,10 +68,10 @@ const SpeakerPage = () => {
                   color="var(--c-accent)"
                   mb="2"
                 >
-                  "Jag har lyssnat till de allra främsta föreläsarna i Sverige.
-                  Dennis är bättre."
+                  "Jag har nog aldrig tidigare känt ett sådant lugn som jag gör
+                  just nu. Tack."
                 </Text>
-                <Text>- Thomas Svefelt, Mazars SET</Text>
+                <Text>- Christian R-H</Text>
                 <Text mt="3">
                   Förbered dig på en föreläsning som leder till omedelbar
                   förändring. Dennis nöjer sig inte med att skapa en trevlig
@@ -91,30 +91,6 @@ const SpeakerPage = () => {
                 loading
                 fluid={data.allFile.edges[0].node.childImageSharp.fluid}
               />
-            </Grid>
-            <Text mt="3" textAlign="center">
-              Dennis har bland annat föreläst för:
-            </Text>
-            <Grid
-              maxWidth="800px"
-              m="0 auto"
-              mt="4"
-              id="clients"
-              gridTemplateColumns={["1fr", "1fr 1fr 1fr 1fr"]}
-              gridGap="2rem"
-            >
-              <div>
-                <IcaLogo />
-              </div>
-              <div>
-                <SkaneLogo />
-              </div>
-              <div>
-                <RiksbyggenLogo />
-              </div>
-              <div>
-                <SydkraftLogo />
-              </div>
             </Grid>
           </Container>
         </Box>

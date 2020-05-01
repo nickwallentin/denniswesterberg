@@ -57,18 +57,12 @@ const item = {
 
 const navLinks = [
   { name: "Boka föreläsning", to: "/forelasare" },
-  { name: "Boka coachning", to: "/" },
+  { name: "Boka coaching", to: "/coaching" },
   {
     name: "Fördjupa dig",
-    to: "/blogg",
+    to: "/artiklar",
     highlight: true,
   },
-]
-
-const mobileNavLinks = [
-  { name: "Böcker", to: "/" },
-  { name: "Podcast", to: "/" },
-  { name: "Blogg", to: "/blogg" },
 ]
 
 export default function Header({ overrideColor }) {
@@ -217,19 +211,6 @@ export default function Header({ overrideColor }) {
                   </Link>
                 </NavLink>
               ))}
-
-              {mobileNavLinks.map((link, i) => (
-                <NavLink key={i} variants={item}>
-                  <Link
-                    className={
-                      link.highlight ? "highlight secondary" : "secondary"
-                    }
-                    to={link.to}
-                  >
-                    {link.name}
-                  </Link>
-                </NavLink>
-              ))}
             </motion.ul>
           </MobileMenu>
         )}
@@ -282,7 +263,7 @@ const NavLink = styled(motion.div)`
     color: var(--c-heading);
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: var(--f-weight-heading);
+    font-weight: var(--f-weight-fat);
     font-size: 1.5rem;
     &.secondary {
       font-size: 1rem;
@@ -350,7 +331,7 @@ const StyledHeader = styled(motion.header)`
       color: var(--c-heading);
       text-transform: uppercase;
       text-decoration: none;
-      font-weight: var(--f-weight-heading);
+      font-weight: var(--f-weight-fat);
       margin: 0px 15px;
       &.highlight {
         color: var(--c-accent) !important;

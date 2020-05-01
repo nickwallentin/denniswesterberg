@@ -100,6 +100,7 @@ const HeroSection = () => {
             variants={fadeIn}
             fontSize={["2.5rem", "4rem", "5rem"]}
             textAlign={["center", "left"]}
+            fontWeight="var(--f-weight-fat) !important"
             fontStyle="uppcercase"
             style={{ textTransform: "uppercase" }}
             mb={["3", "5"]}
@@ -193,7 +194,7 @@ const StyledLink = styled(Link)`
   font-size: 2rem;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: var(--f-weight-heading);
+  font-weight: var(--f-weight-fat);
   color: var(--c-accent);
   display: inline-flex;
   align-items: center;

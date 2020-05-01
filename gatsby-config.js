@@ -20,6 +20,12 @@ module.exports = {
     "gatsby-transformer-yaml",
     "gatsby-plugin-smoothscroll",
     {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `dennis_westerberg`,
+      },
+    },
+    {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
@@ -46,6 +52,13 @@ module.exports = {
       options: {
         name: "posts",
         path: `${__dirname}/content/posts`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "books",
+        path: `${__dirname}/content/books`,
       },
     },
     {

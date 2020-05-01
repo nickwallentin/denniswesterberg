@@ -14,6 +14,7 @@ import rehypeReact from "rehype-react"
 import DownArrowIcon from "../assets/svg/down.svg"
 // Rehype components
 import PodcastEpisode from "../components/rehype/podcastEpisode"
+import BookDisplay from "../components/rehype/bookDisplay"
 
 //this component handles the blur img & fade-ins
 import Img from "gatsby-image"
@@ -78,6 +79,7 @@ export default function Blog(props) {
     createElement: React.createElement,
     components: {
       "podcast-episode": PodcastEpisode,
+      "book-display": BookDisplay,
     },
   }).Compiler
 
@@ -92,7 +94,13 @@ export default function Blog(props) {
 
   return (
     <Layout>
-      <SEO title={data.frontmatter.title} />
+      <SEO
+        title={
+          data.frontmatter.subtitle
+            ? `${data.frontmatter.title} - ${data.frontmatter.subtitle}`
+            : data.frontmatter.title
+        }
+      />
       <Article variants={container} initial="initial" animate="visible">
         <Box bg="var(--c-bg-sec)">
           <Container>
@@ -169,27 +177,22 @@ export default function Blog(props) {
               query="(min-width: 901px)"
               render={() => (
                 <Sidebar>
-                  <Sticky stickyStyle={{ top: "80px" }} topOffset={-80}>
-                    <Heading color="var(--c-accent)" fontSize="3" as="h4">
-                      Innehåll
-                    </Heading>
-                    <ul>
+                  <Heading color="var(--c-accent)" fontSize="3" as="h4">
+                    Innehåll
+                  </Heading>
+                  <ul>
+                    <li onClick={() => scrollTo(`#body`)} className="heading-2">
+                      Introduktion
+                    </li>
+                    {data.headings.map((heading, index) => (
                       <li
-                        onClick={() => scrollTo(`#body`)}
-                        className="heading-2"
+                        onClick={() => scrollTo(`#heading-${index + 1}`)}
+                        className={"heading-" + heading.depth}
                       >
-                        Introduktion
+                        {heading.value}
                       </li>
-                      {data.headings.map((heading, index) => (
-                        <li
-                          onClick={() => scrollTo(`#heading-${index + 1}`)}
-                          className={"heading-" + heading.depth}
-                        >
-                          {heading.value}
-                        </li>
-                      ))}
-                    </ul>
-                  </Sticky>
+                    ))}
+                  </ul>
                 </Sidebar>
               )}
             />
@@ -262,7 +265,7 @@ const PostContent = styled(motion.div)`
   p {
     font-size: 1.5rem;
     line-height: 2.3rem;
-    font-family: var(--font-secondary);
+    font-weight: 300;
     margin-bottom: 2rem;
   }
 
@@ -275,6 +278,14 @@ const PostContent = styled(motion.div)`
     font-size: 2rem;
     margin-top: 3.5rem;
     margin-bottom: 2rem;
+  }
+  ul,
+  ol {
+    margin-bottom: 2rem;
+    li {
+      font-size: 1.5rem;
+      line-height: 2.3rem;
+    }
   }
 
   @media (max-width: 500px) {
@@ -293,6 +304,13 @@ const PostContent = styled(motion.div)`
       line-height: 2rem;
       margin-top: 2.8rem;
       margin-bottom: 1.8rem;
+    }
+    ul {
+      margin-bottom: 2rem;
+      li {
+        font-size: 1.2rem;
+        line-height: 2rem;
+      }
     }
   }
 `

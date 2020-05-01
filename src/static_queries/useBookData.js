@@ -1,31 +1,25 @@
 import { graphql, useStaticQuery } from "gatsby"
 
-export default function useBlogData() {
+export default function useBookData() {
   const data = useStaticQuery(graphql`
-    query getBlogData {
-      allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/posts/" } }
-        sort: { order: DESC, fields: frontmatter___date }
-      ) {
+    query getBookData {
+      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/books/" } }) {
         edges {
           node {
             id
             frontmatter {
-              date(formatString: "MMMM Do, YYYY")
-              categories
               title
-
               subtitle
               intro
-              hero_image {
-                listImage: childImageSharp {
-                  fluid(maxWidth: 800, maxHeight: 400) {
+              buy_url
+              image {
+                small: childImageSharp {
+                  fluid(maxWidth: 200) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
                 }
               }
             }
-            excerpt(pruneLength: 200)
             fields {
               slug
             }

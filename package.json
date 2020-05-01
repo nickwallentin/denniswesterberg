@@ -33,6 +33,7 @@
     "gatsby-remark-relative-images": "^0.2.2",
     "gatsby-source-facebook": "^2.0.1",
     "gatsby-source-filesystem": "^2.1.2",
+    "gatsby-source-instagram": "^0.7.0",
     "gatsby-transformer-remark": "^2.6.1",
     "gatsby-transformer-sharp": "^2.2.1",
     "gatsby-transformer-yaml": "^2.2.4",

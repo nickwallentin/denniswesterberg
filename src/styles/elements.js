@@ -95,7 +95,7 @@ export const TextLink = styled(Link)(
   
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: var(--f-weight-heading);
+  font-weight: var(--f-weight-fat);
   color: var(--c-heading);
   display: inline-flex;
   align-items: center;
