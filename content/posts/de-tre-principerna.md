@@ -3,7 +3,7 @@ hero_image: "/content/images/puzzle2-1080x675.jpg"
 categories:
 - de tre principerna
 - välmående
-date: 2018-12-18T13:45:28Z
+date: 2018-12-18T13:45:28.000+00:00
 title: De tre principerna
 subtitle: En nybörjares guide
 intro: I det här blogginlägget berättar jag, så tydligt jag kan, om hur jag ser på
@@ -273,7 +273,7 @@ Att inse faktum, är att vara vaken. Att tro på tanken, är att drömma.
 
 Principerna finns där för att väcka oss ur drömmen, illusionen. Somliga ser dem och kommer till klarhet. Andra ignorerar dem, och förlorar sig åter i drömmen.
 
-Det är okej vilket som. Att vara människa, är just att vara vaken ibland, och att somna till emellanåt. 
+Det är okej vilket som. Att vara människa, är just att vara vaken ibland, och att somna till emellanåt.
 
 Principerna förklarar skillnaden. Bara det. Ingenting annat.
 
@@ -307,9 +307,11 @@ Personligen gillar jag Sydney Banks egna böcker allra bäst. Även om de har n�
 
 Andra föredrar exempelvis [Michael Neills](https://www.amazon.com/Michael-Neill/e/B001JS20VY/ref=sr_ntt_srch_lnk_1?qid=1545213311&sr=8-1), [Dicken Bettingers](https://www.amazon.com/s/ref=dp_byline_sr_ebooks_1?ie=UTF8&text=Dicken+Bettinger&search-alias=digital-text&field-author=Dicken+Bettinger&sort=relevancerank), [Elsie Spittles](https://www.amazon.com/Elsie-Spittle/e/B00NBBJO5W/ref=sr_ntt_srch_lnk_1?qid=1545213360&sr=1-1) eller [Jamie Smarts](https://www.amazon.com/Jamie-Smart/e/B00N7HMHL8/ref=sr_ntt_srch_lnk_1?qid=1545213386&sr=1-1) böcker.
 
-### **Bara en tanke – din guide till villkorslöst välmående** 
+### **Bara en tanke – din guide till villkorslöst välmående**
 
 ![Bara en tanke – din guide till villkorslöst välmående](/content/images/bara-en-tanke.jpg "Bara en tanke – din guide till villkorslöst välmående")
+
+<book title="Bara en tanke"></book>
 
 Såklart har jag ett eget bidrag, nämligen [Bara en tanke – din guide till villkorslöst välmående](https://www.denniswesterberg.com/shop/bocker/bara-en-tanke/), som gavs ut redan 2015.
 
