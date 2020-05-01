@@ -21,7 +21,7 @@ const BookDisplay = ({ title }) => {
         fluid={bookNode[0].node.frontmatter.image.small.fluid}
         alt={bookNode[0].node.frontmatter.title}
       />
-      <div className="content">
+      <span className="content">
         <strong>
           {bookNode[0].node.frontmatter.title}
           {bookNode[0].node.frontmatter.subtitle && (
@@ -34,14 +34,14 @@ const BookDisplay = ({ title }) => {
             Köp boken
           </a>
         )}
-      </div>
+      </span>
     </StyledBook>
   )
 }
 
 export default BookDisplay
 
-const StyledBook = styled.div`
+const StyledBook = styled.span`
   display: grid;
   grid-template-columns: 100px 1fr;
   grid-gap: 1rem;
@@ -63,9 +63,16 @@ const StyledBook = styled.div`
       margin-bottom: 0px;
     }
     a {
-      display: block;
+      display: inline-block;
       margin-top: 0.2rem;
       font-size: 1.2rem;
+      line-height: 1.2rem;
+      padding: 5px;
+      border: 1px solid var(--c-accent);
+      width: 90px;
+      border-radius: 4px;
+      text-align: center;
+      margin-top: 10px;
       &:hover {
         text-decoration: underline;
       }
