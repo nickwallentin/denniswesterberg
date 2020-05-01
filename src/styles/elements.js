@@ -76,8 +76,8 @@ export const Heading = styled(motion.h2)(
 export const Text = styled(motion.p)(
   basic,
   `
-font-size: 1.2rem;
-line-height: 1.8rem;
+  font-size: 1.2rem ;
+  line-height: 1.8rem ;
 `
 )
 

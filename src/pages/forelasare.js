@@ -23,10 +23,17 @@ import SydkraftLogo from "../assets/svg/clients/sydkraft.svg"
 const SpeakerPage = () => {
   const data = useStaticQuery(graphql`
     query getMainSpeakerImager {
-      file(name: { eq: "forelasare-dennis-westerberg-main" }) {
-        childImageSharp {
-          fluid(maxWidth: 600, maxHeight: 600) {
-            ...GatsbyImageSharpFluid_withWebp
+      allFile(
+        filter: { relativeDirectory: { eq: "images/forelasare" } }
+        sort: { fields: name }
+      ) {
+        edges {
+          node {
+            childImageSharp {
+              fluid(maxWidth: 600, maxHeight: 600) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
           }
         }
       }
@@ -55,14 +62,14 @@ const SpeakerPage = () => {
                   Boka föreläsning
                 </Heading>
                 <Text
-                  fontSize={["2.8rem", "2.8rem"]}
-                  lineHeight={["2.5rem", "3.1rem"]}
+                  fontSize={["2rem !important", "2.8rem !important"]}
+                  lineHeight={["2.4rem !important", "3.1rem !important"]}
                   fontWeight="300 !important"
                   color="var(--c-accent)"
                   mb="2"
                 >
                   "Jag har lyssnat till de allra främsta föreläsarna i Sverige.
-                  Dennis är bättre.""
+                  Dennis är bättre."
                 </Text>
                 <Text>- Thomas Svefelt, Mazars SET</Text>
                 <Text mt="3">
@@ -80,7 +87,10 @@ const SpeakerPage = () => {
                 </Text>
               </Flex>
 
-              <Img loading fluid={data.file.childImageSharp.fluid} />
+              <Img
+                loading
+                fluid={data.allFile.edges[0].node.childImageSharp.fluid}
+              />
             </Grid>
             <Text mt="3" textAlign="center">
               Dennis har bland annat föreläst för:
@@ -90,7 +100,7 @@ const SpeakerPage = () => {
               m="0 auto"
               mt="4"
               id="clients"
-              gridTemplateColumns={["1fr 1fr", "1fr 1fr 1fr 1fr"]}
+              gridTemplateColumns={["1fr", "1fr 1fr 1fr 1fr"]}
               gridGap="2rem"
             >
               <div>
@@ -109,13 +119,159 @@ const SpeakerPage = () => {
           </Container>
         </Box>
         <Box
-          py="5"
+          py="6"
           style={{
             background:
               "linear-gradient(0deg, var(--c-bg) 0%, var(--c-bg-sec) 100%)",
           }}
         >
-          <Container></Container>
+          <Container>
+            <Heading
+              textAlign={["left", "center"]}
+              as="p"
+              fontSize={["2rem"]}
+              lineHeight={["2.5rem"]}
+            >
+              De senaste åren har Dennis Westerberg coachat, föreläst och
+              uppträtt för tusentals människor, i olika sammanhang. Han har
+              dessutom utsetts till ”Årets föreläsare”, av förmedlingsbyrån SAJ,
+              som i över 20 år, arbetat med de allra främsta.
+            </Heading>
+          </Container>
+        </Box>
+        <Box>
+          <Container>
+            <Grid mb="5" gridTemplateColumns={["1fr 1fr"]} gridGap="5">
+              <Box>
+                <Img
+                  loading
+                  fluid={data.allFile.edges[1].node.childImageSharp.fluid}
+                />
+              </Box>
+              <Flex flexDirection="column" justifyContent="center">
+                <Heading
+                  fontSize={["2rem !important", "2.4rem !important"]}
+                  lineHeight={["2.4rem !important", "2.8rem !important"]}
+                >
+                  En föreläsning om villkorslöst välmående.
+                </Heading>
+                <Heading
+                  as="h4"
+                  fontSize={["1.2rem !important", "2rem !important"]}
+                  lineHeight={["2.4rem !important", "2.8rem !important"]}
+                  color="var(--c-accent)"
+                >
+                  Ett villkorslöst välmående
+                </Heading>
+                <Text mt="4">
+                  De senaste åren har Dennis Westerberg coachat, föreläst och
+                  uppträtt för tusentals människor, i olika sammanhang. Han har
+                  dessutom utsetts till ”Årets föreläsare”, av förmedlingsbyrån
+                  SAJ, som i över 20 år, arbetat med de allra främsta.
+                </Text>
+              </Flex>
+            </Grid>
+            <Grid mb="5" gridTemplateColumns={["1fr 1fr"]} gridGap="5">
+              <Flex flexDirection="column" justifyContent="center">
+                <Heading
+                  fontSize={["2rem !important", "2.4rem !important"]}
+                  lineHeight={["2.4rem !important", "2.8rem !important"]}
+                >
+                  En föreläsning som skapar insikter.
+                </Heading>
+                <Heading
+                  as="h4"
+                  fontSize={["1.2rem !important", "2rem !important"]}
+                  lineHeight={["2.4rem !important", "2.8rem !important"]}
+                  color="var(--c-accent)"
+                >
+                  Bli den bästa versionen av dig själv
+                </Heading>
+                <Text mt="4">
+                  De senaste åren har Dennis Westerberg coachat, föreläst och
+                  uppträtt för tusentals människor, i olika sammanhang. Han har
+                  dessutom utsetts till ”Årets föreläsare”, av förmedlingsbyrån
+                  SAJ, som i över 20 år, arbetat med de allra främsta.
+                </Text>
+              </Flex>
+              <Box>
+                <Img
+                  loading
+                  fluid={data.allFile.edges[2].node.childImageSharp.fluid}
+                />
+              </Box>
+            </Grid>
+          </Container>
+        </Box>
+        <Box
+          py="5"
+          style={{
+            background:
+              "linear-gradient(180deg, var(--c-bg) 0%, var(--c-bg-sec) 100%)",
+          }}
+        >
+          <Container maxWidth="700px !important">
+            <Box mb="5">
+              <Text
+                fontSize={["2rem !important", "2.4rem !important"]}
+                lineHeight={["2.4rem !important", "2.8rem !important"]}
+                fontWeight="300 !important"
+                color="var(--c-accent)"
+                mb="2"
+              >
+                ”Dennis ger uttrycket ’att leva i nuet’ en helt ny innebörd, som
+                gör det fullt möjligt att leva ett liv utan stress och oro.”
+              </Text>
+              <Text color="var(--c-sub)">
+                - Peter Schön, fd. VD, Granuldisk
+              </Text>
+            </Box>
+            <Box mb="5">
+              <Text
+                fontSize={["2rem !important", "2.4rem !important"]}
+                lineHeight={["2.4rem !important", "2.8rem !important"]}
+                fontWeight="300 !important"
+                color="var(--c-accent)"
+                mb="2"
+              >
+                "Jag har lyssnat till de allra främsta föreläsarna i Sverige.
+                Dennis är bättre."
+              </Text>
+              <Text color="var(--c-sub)">
+                - Peter Schön, fd. VD, Granuldisk
+              </Text>
+            </Box>
+            <Box mb="5">
+              <Text
+                fontSize={["2rem !important", "2.4rem !important"]}
+                lineHeight={["2.4rem !important", "2.8rem !important"]}
+                fontWeight="300 !important"
+                color="var(--c-accent)"
+                mb="2"
+              >
+                ”Dennis ger uttrycket ’att leva i nuet’ en helt ny innebörd, som
+                gör det fullt möjligt att leva ett liv utan stress och oro.”
+              </Text>
+              <Text color="var(--c-sub)">
+                - Peter Schön, fd. VD, Granuldisk
+              </Text>
+            </Box>
+            <Box mb="5">
+              <Text
+                fontSize={["2rem !important", "2.4rem !important"]}
+                lineHeight={["2.4rem !important", "2.8rem !important"]}
+                fontWeight="300 !important"
+                color="var(--c-accent)"
+                mb="2"
+              >
+                ”Dennis ger uttrycket ’att leva i nuet’ en helt ny innebörd, som
+                gör det fullt möjligt att leva ett liv utan stress och oro.”
+              </Text>
+              <Text color="var(--c-sub)">
+                - Peter Schön, fd. VD, Granuldisk
+              </Text>
+            </Box>
+          </Container>
         </Box>
       </PageContainer>
     </Layout>
@@ -152,7 +308,7 @@ const CallToAction = styled.div`
   padding: 10px;
   background: var(--c-bg-pop);
   border-radius: 3px;
-  max-width: 400px;
+  max-width: 310px;
   width: 100%;
   margin-top: 2rem;
   display: flex;
