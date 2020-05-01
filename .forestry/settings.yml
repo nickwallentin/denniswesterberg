@@ -15,14 +15,15 @@ sections:
   templates:
   - blog-post
   - podcast
-- type: document
-  path: content/data/authors.yaml
-  label: Author List
-- type: document
-  path: content/data/info.json
-  label: Info Page
+- type: directory
+  path: content/books
+  label: Böcker
+  create: documents
+  match: "**/*"
+  templates:
+  - bocker
 - type: heading
-  label: General Config
+  label: Inställningar
 - type: document
   path: config.json
   label: Sidinformation
