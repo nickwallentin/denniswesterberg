@@ -52,15 +52,23 @@ const container = {
 const item = {
   initial: { opacity: 0, y: 50 },
   visible: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: 50 },
+  exit: { opacity: 0, y: 0 },
 }
 
 const navLinks = [
-  { name: "Föreläsare", to: "/" },
-  { name: "Coach", to: "/" },
+  { name: "Boka föreläsning", to: "/forelasare" },
+  { name: "Boka coachning", to: "/" },
+  {
+    name: "Fördjupa dig",
+    to: "/blogg",
+    highlight: true,
+  },
+]
+
+const mobileNavLinks = [
   { name: "Böcker", to: "/" },
   { name: "Podcast", to: "/" },
-  { name: "Nyhetsbrev", to: "/blogg" },
+  { name: "Blogg", to: "/blogg" },
 ]
 
 export default function Header({ overrideColor }) {
@@ -90,7 +98,11 @@ export default function Header({ overrideColor }) {
                   flex="1"
                 >
                   {navLinks.map(link => (
-                    <Link key={link.name} to={link.to}>
+                    <Link
+                      className={link.highlight ? "highlight" : null}
+                      key={link.name}
+                      to={link.to}
+                    >
                       {link.name}
                     </Link>
                   ))}
@@ -102,10 +114,10 @@ export default function Header({ overrideColor }) {
               className="actions"
               alignItems="center"
               justifyContent="flex-end"
-              flex="1"
+              flex={["1", "inherit"]}
             >
               <Box mr={["3", "4"]}>SV / EN</Box>
-              <Box mr={["3", "4", "0"]}>
+              <Box mr={["3", "4"]}>
                 <ThemeToggler>
                   {({ theme, toggleTheme }) => (
                     <div
@@ -140,39 +152,35 @@ export default function Header({ overrideColor }) {
               </Box>
               <AnimatePresence>
                 {menuOpen ? (
-                  <Media
-                    query="(max-width: 900px)"
-                    render={() => (
-                      <MenuToggler onClick={() => setMenuOpen(prev => !prev)}>
-                        <motion.svg
-                          key="open"
-                          width="24px"
-                          height="24px"
-                          animate={{ rotate: 180 }}
-                          exit={{ rotate: 0 }}
-                        >
-                          <motion.path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-                        </motion.svg>
-                      </MenuToggler>
-                    )}
-                  />
+                  <MenuToggler
+                    style={{ cursor: "pointer" }}
+                    onClick={() => setMenuOpen(prev => !prev)}
+                  >
+                    <motion.svg
+                      key="open"
+                      width="24px"
+                      height="24px"
+                      animate={{ rotate: 180 }}
+                      exit={{ rotate: 0 }}
+                    >
+                      <motion.path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                    </motion.svg>
+                  </MenuToggler>
                 ) : (
-                  <Media
-                    query="(max-width: 900px)"
-                    render={() => (
-                      <MenuToggler onClick={() => setMenuOpen(prev => !prev)}>
-                        <motion.svg
-                          key="close"
-                          width="24px"
-                          height="24px"
-                          animate={{ rotate: 180 }}
-                          exit={{ rotate: 0 }}
-                        >
-                          <motion.path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
-                        </motion.svg>
-                      </MenuToggler>
-                    )}
-                  />
+                  <MenuToggler
+                    style={{ cursor: "pointer" }}
+                    onClick={() => setMenuOpen(prev => !prev)}
+                  >
+                    <motion.svg
+                      key="close"
+                      width="24px"
+                      height="24px"
+                      animate={{ rotate: 180 }}
+                      exit={{ rotate: 0 }}
+                    >
+                      <motion.path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+                    </motion.svg>
+                  </MenuToggler>
                 )}
               </AnimatePresence>
             </Flex>
@@ -183,11 +191,11 @@ export default function Header({ overrideColor }) {
         {menuOpen && (
           <MobileMenu
             className={overrideColor ? "override" : null}
-            initial={{ y: "110vh" }}
+            initial={{ x: "500px" }}
             animate={{
-              y: 0,
+              x: 0,
             }}
-            exit={{ y: "110vh" }}
+            exit={{ x: "500px" }}
             transition={{
               ease: "easeInOut",
               when: "beforeChildren",
@@ -200,13 +208,26 @@ export default function Header({ overrideColor }) {
               variants={container}
             >
               {navLinks.map((link, i) => (
-                <NavLink
-                  whileTap={{ scale: 0.9 }}
-                  whileHover={{ scale: 1.1 }}
-                  key={i}
-                  variants={item}
-                >
-                  <Link to={link.to}>{link.name}</Link>
+                <NavLink key={i} variants={item}>
+                  <Link
+                    className={link.highlight ? "highlight" : null}
+                    to={link.to}
+                  >
+                    {link.name}
+                  </Link>
+                </NavLink>
+              ))}
+
+              {mobileNavLinks.map((link, i) => (
+                <NavLink key={i} variants={item}>
+                  <Link
+                    className={
+                      link.highlight ? "highlight secondary" : "secondary"
+                    }
+                    to={link.to}
+                  >
+                    {link.name}
+                  </Link>
                 </NavLink>
               ))}
             </motion.ul>
@@ -218,39 +239,59 @@ export default function Header({ overrideColor }) {
 }
 
 const MobileMenu = styled(motion.div)`
-  background: var(--c-bg-sec);
+  background: var(--c-bg-menu);
+  backdrop-filter: blur(6px);
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100vw;
   height: 100vh;
-  padding: 120px 5% 5% 5%;
+  padding: 220px 5% 5% 5%;
   box-sizing: border-box;
   z-index: 98;
-  box-shadow: 0px -50px 100px var(--c-bg-sec);
+
+  max-width: 500px;
+  .highlight {
+    color: var(--c-accent) !important;
+  }
 
   &.override {
-    background: var(--bg-sec-dark) !important;
+    background: var(--bg-menu-dark) !important;
     a {
       color: var(--c-heading-dark);
+      &.highlight {
+        color: var(--c-accent) !important;
+      }
     }
+  }
+  @media (max-width: 500px) {
+    padding: 120px 5% 5% 5%;
   }
 `
 
 const Compensator = styled.div`
-  margin-top: ${props => (props.menuOpen ? "109px" : "0px")};
+  margin-top: ${props => (props.menuOpen ? "204px" : "0px")};
+  @media (max-width: 500px) {
+    margin-top: ${props => (props.menuOpen ? "109px" : "0px")};
+  }
 `
 
 const NavLink = styled(motion.div)`
-  text-align: center;
+  text-align: left;
   a {
     color: var(--c-heading);
     text-decoration: none;
     text-transform: uppercase;
     font-weight: var(--f-weight-heading);
     font-size: 1.5rem;
+    &.secondary {
+      font-size: 1rem;
+    }
   }
-  margin: 2rem 0px;
+  padding: 1rem 0px;
+  @media (max-width: 500px) {
+    text-align: center;
+  }
 `
 
 const ThemeSwitch = styled(motion.div)`
@@ -304,12 +345,16 @@ const StyledHeader = styled(motion.header)`
   width: 100%;
 
   nav {
+    flex: 1;
     a {
       color: var(--c-heading);
       text-transform: uppercase;
       text-decoration: none;
       font-weight: var(--f-weight-heading);
       margin: 0px 15px;
+      &.highlight {
+        color: var(--c-accent) !important;
+      }
     }
   }
   &.override {
@@ -330,6 +375,9 @@ const StyledHeader = styled(motion.header)`
     nav {
       a {
         color: var(--c-heading-dark) !important;
+        &.highlight {
+          color: var(--c-accent) !important;
+        }
       }
     }
 

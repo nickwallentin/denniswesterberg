@@ -23,29 +23,23 @@ const BlogPage = () => {
       <SEO title="Blogg"></SEO>
       <Box bg="var(--c-bg-sec)">
         <Container>
-          <Grid gridTemplateColumns={["1fr", "1fr 1fr"]} py="5">
-            <Box>
-              <Heading mb="4" fontSize="3.5rem" as="h1">
-                Blogg
+          <Grid py="5">
+            <Box textAlign="center" maxWidth="600px" m="0 auto">
+              <Heading mb="2" fontSize={["1.8rem", "2.5rem"]} as="h1">
+                Få exklusivt innehåll
               </Heading>
-              <Text>
-                Det finns en djupt rotad föreställning hos oss människor, om att
-                stress är en naturlig och ofrånkomlig del av livet. Dessutom en
-                viktig ingrediens för framgång.
-              </Text>
+              <Heading mb="4" color="var(--c-accent)" fontSize="1.5rem" as="h4">
+                Gå med i nyhetsbrevet.
+              </Heading>
+
+              <Text mt="4">Formulär mailchimp</Text>
             </Box>
-            <Flex alignItems="center" justifyContent="flex-end">
-              <Button py={["2", "3"]} px={["2", "4"]} bg="var(--c-bg-pop)">
-                <NotificationsIcon />
-                Nyhetsbrev
-              </Button>
-            </Flex>
           </Grid>
         </Container>
       </Box>
       <Box>
         <Container>
-          <Grid gridTemplateColumns={["1fr", "2fr 1fr"]}>
+          <Grid gridTemplateColumns={["1fr"]} m="0 auto" maxWidth="700px">
             <LatestPosts />
           </Grid>
         </Container>

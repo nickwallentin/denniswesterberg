@@ -12,11 +12,13 @@
   --bg-pop-light: #0d0d0d10;
   --bg-light-alpha: #ffffff00;
   --bg-sec-light: #eeeeee;
+  --bg-menu-light: #ffffffe3;
 
   --bg-dark: #0d0d0d;
   --bg-pop-dark: #ffffff20;
   --bg-dark-alpha: #0d0d0d00;
   --bg-sec-dark: #17181a;
+  --bg-menu-dark: #0d0d0de3;
 
   --c-heading-light: #000000;
   --c-body-light: #000000;
@@ -26,7 +28,9 @@
   --c-body-dark: rgb(210, 210, 210);
   --c-text-sub-dark: #b0b0b0;
 
-  --c-accent: #ffc700;
+  --c-accent-dark: #ffc700;
+  --c-accent-light: #ff7800;
+  --c-cta: #6eb625;
 
   --i-main-light: #000000;
 
@@ -40,12 +44,15 @@ body.light {
   --c-bg-sec: var(--bg-sec-light);
   --c-bg-alpha: var(--bg-light-alpha);
   --c-bg-pop: var(--bg-pop-light);
+  --c-bg-menu: var(--bg-menu-light);
 
   --c-heading: var(--c-heading-light);
   --c-body: var(--c-body-light);
   --c-sub: var(--c-text-sub-light);
 
   --i-main: var(--i-main-light);
+
+  --c-accent: var(--c-accent-light);
 }
 
 body.dark {
@@ -55,12 +62,15 @@ body.dark {
   --c-bg-sec: var(--bg-sec-dark);
   --c-bg-alpha: var(--bg-dark-alpha);
   --c-bg-pop: var(--bg-pop-dark);
+  --c-bg-menu: var(--bg-menu-dark);
 
   --c-heading: var(--c-heading-dark);
   --c-body: var(--c-body-dark);
   --c-sub: var(--c-text-sub-dark);
 
   --i-main: var(--i-main-dark);
+
+  --c-accent: var(--c-accent-dark);
 }
 
 body {

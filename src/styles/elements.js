@@ -28,7 +28,7 @@ const basic = compose(
 export const Box = styled(motion.div)(
   basic,
   `
-
+  
 `
 )
 
