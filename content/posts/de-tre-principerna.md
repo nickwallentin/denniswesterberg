@@ -326,7 +326,7 @@ Därefter tycker jag att du ska gå direkt till källan. Alltså att ta del av o
 
 <youtube-embed id="NHpnzI49JbU"></youtube-embed>
 
-En fantastisk resurs finner du via [Three Principles Movies](http://www.threeprinciplesmovies.com/). Mängder med videoklipp, och massor av kvalitetslänkar. Även herr Westerberg finns med på ett hörn, minsann (Intervju med [Dennis Westerberg](https://www.denniswesterberg.com/), från YouTube:)
+En fantastisk resurs finner du via [Three Principles Movies](http://www.threeprinciplesmovies.com/). Mängder med videoklipp, och massor av kvalitetslänkar. Även herr Westerberg finns med på ett hörn, minsann (Intervju med [Dennis Westerberg](https://www.denniswesterberg.com/), från YouTube)
 
 <youtube-embed id="uT5lsspajpk"></youtube-embed>
 
