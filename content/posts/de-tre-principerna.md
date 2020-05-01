@@ -320,13 +320,23 @@ Gör en [googling](https://www.google.se/search?q=The+three+principles&oq=the+th
 
 Det som jag personligen föreslår, om du vill lära dig mer om principerna, är att du börjar med att kolla in en video med [Michael Neill](https://www.michaelneill.org/), på YouTube. Den finns i tre delar. Del ett finner du här: [https://youtu.be/OmnvLnh3ieY](https://youtu.be/OmnvLnh3ieY "https://youtu.be/OmnvLnh3ieY")
 
+<youtube-embed id="OmnvLnh3ieY"></youtube-embed>
+
 Därefter tycker jag att du ska gå direkt till källan. Alltså att ta del av olika videoklipp med [Sydney Banks](http://sydbanks.com/). Detta är ett av mina favoritklipp: [https://youtu.be/NHpnzI49JbU](https://youtu.be/OmnvLnh3ieY "https://youtu.be/OmnvLnh3ieY")
+
+<youtube-embed id="NHpnzI49JbU"></youtube-embed>
 
 En fantastisk resurs finner du via [Three Principles Movies](http://www.threeprinciplesmovies.com/). Mängder med videoklipp, och massor av kvalitetslänkar. Även herr Westerberg finns med på ett hörn, minsann (Intervju med [Dennis Westerberg](https://www.denniswesterberg.com/), från YouTube: [https://www.youtube.com/watch?v=uT5lsspajpk](https://youtu.be/OmnvLnh3ieY "https://youtu.be/OmnvLnh3ieY"))
 
+<youtube-embed id="uT5lsspajpk"></youtube-embed>
+
 Missa inte psykiatrikern [Bill Pettit](https://thedrspettit.com/), som beskriver hur insikter kring de tre principerna har väckt välmåendet till liv hos mängder med patienter, som han ”behandlat” under sin karriär. Ett fantastiskt klipp: [https://youtu.be/UbnxCd2VrtA](https://youtu.be/OmnvLnh3ieY "https://youtu.be/OmnvLnh3ieY")
 
+<youtube-embed id="UbnxCd2VrtA"></youtube-embed>
+
 Glöm inte att ta del av de klokheter som psykologen [George Pransky](http://pranskyandassociates.com/) bjuder på. George Pransky var en av de först psykologer träffade Sydney Banks, efter att herr Banks gjort sin upptäckt. Jag gillar detta klipp särskilt mycket: [https://youtu.be/35Cr_TUbB5I](https://youtu.be/OmnvLnh3ieY "https://youtu.be/OmnvLnh3ieY")
+
+<youtube-embed id="35Cr_TUbB5I"></youtube-embed>
 
 Ett annat sätt, än att kolla in olika klipp på YouTube, är att delta i någon kurs/utbildning som syftar till att presentera principerna. Om du är bekväm med engelskspråkig utbildning, kan jag rekommendera kurser av [Elise Spittle](https://www.3phd.net/), [Dr Aaron Turner](http://onethought.com/), [George Pransky](http://www.pranskyandassociates.com/) eller [Jack Pransky](https://insideoutunderstanding.com/).
 
