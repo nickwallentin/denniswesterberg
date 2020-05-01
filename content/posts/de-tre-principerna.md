@@ -1,5 +1,5 @@
 ---
-hero_image: "/content/images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg"
+hero_image: "/content/images/puzzle2-1080x675.jpg"
 categories:
 - de tre principerna
 - välmående
