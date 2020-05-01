@@ -32,6 +32,9 @@ fields:
   type: tag_list
   default: []
   label: Ämne
+- name: featured
+  type: boolean
+  label: Framhäv artikel
 - name: date
   type: datetime
   label: date
