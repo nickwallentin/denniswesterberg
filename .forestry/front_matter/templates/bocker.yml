@@ -1,4 +1,28 @@
 ---
 label: Böcker
 hide_body: false
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Titel
+- name: subtitle
+  type: text
+  config:
+    required: false
+  label: Underrubrik
+- name: bild
+  type: file
+  config:
+    maxSize: 64
+  label: Bild
+- name: intro
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Kort beskrivning
