@@ -47,4 +47,5 @@ fields:
   default: now
 pages:
 - content/posts/coachning-för-ledare.md
+- content/posts/de-tre-principerna.md
 - content/posts/vad-sägs-om-nu.md
