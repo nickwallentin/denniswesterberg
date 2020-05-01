@@ -2,13 +2,6 @@
 label: Inlägg
 hide_body: false
 fields:
-- name: hero_image
-  type: file
-  config:
-    maxSize: '10'
-  label: Huvudbild
-  description: Enter hero image for blog post here
-  default: "/content/images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg"
 - type: text
   name: title
   label: Rubrik
@@ -17,6 +10,13 @@ fields:
   config:
     required: false
   label: Underrubrik
+- name: hero_image
+  type: file
+  config:
+    maxSize: '10'
+  label: Huvudbild
+  description: Enter hero image for blog post here
+  default: "/content/images/sarah-dorweiler-9Z1KRIfpBTM-unsplash.jpg"
 - name: intro
   type: textarea
   default: ''
