@@ -26,5 +26,15 @@ fields:
     schema:
       format: markdown
   label: Kort beskrivning
+- name: price
+  type: text
+  config:
+    required: false
+  label: Pris
+- name: buy_url
+  type: text
+  config:
+    required: false
+  label: Länk till köp (URL)
 pages:
 - content/books/bara-en-tanke.md
