@@ -2,10 +2,9 @@
 title: Jag dog och fick liv igen
 subtitle: ''
 bild: "/content/images/jag-dog-och-fick-liv-igen-1.jpg"
-intro: |-
-  Allt fler unga tjejer och killar mår psykiskt dåligt. Det är för dessa som jag har skrivit min senaste bok ”Jag dog och fick liv igen”. En skönlitterär berättelse på ytan, med ett hoppingivande budskap bortom orden. Boken fungerar som en guidning för att kunna återfå välmåendet.
-
-  Therese Lindgren och Nicole Falciani är inläsare av ljudboksversionen. Det här är bokversionen.
+intro: Allt fler unga tjejer och killar mår psykiskt dåligt. Det är för dessa som
+  jag har skrivit min senaste bok ”Jag dog och fick liv igen”. En skönlitterär berättelse
+  på ytan, med ett hoppingivande budskap bortom orden.
 price: "95"
 buy_url: https://www.adlibris.com/se/bok/jag-dog-och-fick-liv-igen-9789188375612
 image: "/content/images/jag-dog-och-fick-liv-igen-1.jpg"
