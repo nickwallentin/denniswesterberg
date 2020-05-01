@@ -8,6 +8,7 @@ intro: |-
   Då är den här boken något för dig.
 price: "135"
 buy_url: https://www.adlibris.com/se/e-bok/bara-en-tanke-9789187093791
+image: "/content/images/bara-en-tanke-1.jpg"
 
 ---
 Upplever du ständig stress och riskerar att bli utbränd? Reagerar du ofta med ilska eller lägger du all skuld på dig själv? Plågas du av tvångs- eller självmordstankar? Har du ätstörningar eller vill ta dig ur ett missbruk?
