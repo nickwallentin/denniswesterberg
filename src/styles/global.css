@@ -1,4 +1,23 @@
-@import url("https://use.typekit.net/wer4sxu.css");
+@font-face {
+  font-family: futura-pt;
+  font-weight: 400;
+  font-style: normal;
+  src: url("../assets/fonts/FuturaPTBook.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: futura-pt;
+  font-weight: 500;
+  src: url("../assets/fonts/FuturaPTMedium.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: futura-pt;
+  font-weight: 700;
+  font-style: normal;
+  src: url("../assets/fonts/FuturaPTHeavy.woff") format("woff");
+  font-display: swap;
+}
 
 :root {
   /* Set root variables */
