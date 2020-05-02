@@ -23,6 +23,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   //dynamically create pages here
   //get path to template
   const blogTemplate = path.resolve("./src/templates/blog.js")
+  const bookTemplate = path.resolve("./src/templates/book.js")
   //get slugs
   const blogData = await graphql(`
     query {
@@ -37,11 +38,37 @@ module.exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
+
   //create new pages with unique slug
   blogData.data.allMarkdownRemark.edges.forEach(edge => {
     createPage({
       component: blogTemplate,
       path: `/${edge.node.fields.slug}`,
+      context: {
+        slug: edge.node.fields.slug,
+      },
+    })
+  })
+
+  const bookData = await graphql(`
+    query {
+      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/books/" } }) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  //create new pages with unique slug
+  bookData.data.allMarkdownRemark.edges.forEach(edge => {
+    createPage({
+      component: bookTemplate,
+      path: `/bocker/${edge.node.fields.slug}`,
       context: {
         slug: edge.node.fields.slug,
       },

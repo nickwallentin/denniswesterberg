@@ -45,27 +45,41 @@ const BooksPage = () => {
               </Heading>
               <Grid gridTemplateColumns="1fr" gridGap="4">
                 {books.map(({ node: book }) => (
-                  <Book to={"/bocker/" + book.fields.slug}>
-                    <Img
-                      style={{ boxShadow: "0px 0px 30px rgba(0,0,0,0.2)" }}
-                      fluid={book.frontmatter.image.large.fluid}
-                    />
+                  <Book>
+                    <Link to={"/bocker/" + book.fields.slug}>
+                      <Img
+                        style={{ boxShadow: "0px 0px 30px rgba(0,0,0,0.2)" }}
+                        fluid={book.frontmatter.image.large.fluid}
+                      />
+                    </Link>
                     <Flex flexDirection="column" justifyContent="center">
-                      <Heading fontSize="1.5rem">
-                        {book.frontmatter.title}
-                      </Heading>
-                      <Heading
-                        color="var(--c-accent)"
-                        mb="3"
-                        as="h4"
-                        mt="2"
-                        fontSize="1.2rem"
-                      >
-                        {book.frontmatter.subtitle}
-                      </Heading>
-                      <Text>{book.frontmatter.intro}</Text>
+                      <Link to={"/bocker/" + book.fields.slug}>
+                        <Heading fontSize="1.5rem">
+                          {book.frontmatter.title}
+                        </Heading>
+                      </Link>
+                      <Link to={"/bocker/" + book.fields.slug}>
+                        <Heading
+                          color="var(--c-accent)"
+                          mb="3"
+                          as="h4"
+                          mt="2"
+                          fontSize="1.2rem"
+                        >
+                          {book.frontmatter.subtitle}
+                        </Heading>
+                      </Link>
+                      <Link to={"/bocker/" + book.fields.slug}>
+                        <Text color="var(--c-body)">
+                          {book.frontmatter.intro}
+                        </Text>
+                      </Link>
                       <Flex className="links">
-                        <a target="_blank" href={book.frontmatter.buy_url}>
+                        <a
+                          className="main"
+                          target="_blank"
+                          href={book.frontmatter.buy_url}
+                        >
                           Köp boken
                         </a>
                         <a href="#">Ljudbok</a>
@@ -85,26 +99,29 @@ const BooksPage = () => {
 
 export default BooksPage
 
-const Book = styled(Link)`
+const Book = styled.div`
   padding: 2rem;
   background: var(--c-bg-sec);
   display: grid;
   grid-template-columns: 1fr 2fr;
   grid-gap: 2rem;
   border-radius: 4px;
-  color: var(--c-heading);
+  a {
+    color: var(--c-heading);
+  }
 
   .links {
     margin-top: 2rem;
     a {
-      font-size: 1.2rem;
-      padding: 5px 10px;
-      border: 1px solid var(--c-accent);
-      border-radius: 4px;
       margin-right: 10px;
-      transition: opacity 200ms;
-      &:hover {
-        opacity: 0.8;
+      padding: 10px 15px;
+      background: var(--c-bg-pop);
+      border-radius: 3px;
+      font-weight: 500;
+      cursor: pointer;
+      &.main {
+        background: var(--c-accent);
+        color: var(--c-bg);
       }
     }
   }

@@ -16,6 +16,7 @@ import DownArrowIcon from "../assets/svg/down.svg"
 import PodcastEpisode from "../components/rehype/podcastEpisode"
 import BookDisplay from "../components/rehype/bookDisplay"
 import YoutubeEmbed from "../components/rehype/youtubeEmbed"
+import QuoteElement from "../components/rehype/quote"
 
 //this component handles the blur img & fade-ins
 import Img from "gatsby-image"
@@ -86,6 +87,7 @@ export default function Blog(props) {
       "podcast-episode": PodcastEpisode,
       "book-display": BookDisplay,
       "youtube-embed": YoutubeEmbed,
+      "quote-element": QuoteElement,
     },
   }).Compiler
 
