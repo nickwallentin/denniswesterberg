@@ -22,7 +22,7 @@ import {
 const PodcastPage = () => {
   return (
     <Layout>
-      <SEO title="Blogg"></SEO>
+      <SEO title="Podcasts"></SEO>
       <HubHeader />
       <Box>
         <Container>

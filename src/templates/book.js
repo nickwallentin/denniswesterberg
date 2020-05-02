@@ -89,9 +89,9 @@ const BookTemplate = props => {
       </Box>
       <Box py="5">
         <Container>
-          <Grid gridTemplateColumns="2fr 1fr" gridGap="4">
+          <Box style={{ maxWidth: "700px", margin: "0 auto" }}>
             <PostContent>{renderAst(data.htmlAst)}</PostContent>
-          </Grid>
+          </Box>
         </Container>
       </Box>
     </Layout>

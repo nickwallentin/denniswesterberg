@@ -29,7 +29,10 @@ const HubHeader = () => {
               Gå med i nyhetsbrevet.
             </Heading>
 
-            <Text mt="4">Formulär mailchimp</Text>
+            <CallToAction>
+              <input type="email" placeholder="Din epost" />
+              <button>Prenumerera</button>
+            </CallToAction>
           </Box>
         </Grid>
         <Flex mt="5" justifyContent="center">
@@ -82,6 +85,55 @@ const Widget = styled.div`
       font-size: 1.2rem;
       color: var(--c-accent);
       font-weight: 300;
+    }
+  }
+`
+
+const CallToAction = styled.div`
+  padding: 10px;
+  background: var(--c-bg-pop);
+  border-radius: 3px;
+  max-width: 320px;
+
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+
+  input {
+    background: transparent;
+    flex: 1;
+    border: none;
+    padding: 10px;
+    color: var(--c-heading);
+    &::placeholder,
+    &::-webkit-input-placeholder {
+      color: var(--c-sub);
+    }
+  }
+  button {
+    background: var(--c-cta);
+    color: white;
+    border: none;
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 4px;
+    animation: Glow 4s infinite;
+    width: 120px;
+  }
+
+  @keyframes Glow {
+    0% {
+      box-shadow: 0px 0px 10px var(--c-cta);
+    }
+    50% {
+      box-shadow: 0px 0px 30px var(--c-cta);
+    }
+    100% {
+      box-shadow: 0px 0px 10px var(--c-cta);
     }
   }
 `

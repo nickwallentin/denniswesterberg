@@ -41,7 +41,7 @@ const SpeakerPage = () => {
   `)
   return (
     <Layout>
-      <SEO title="Föreläsare" />
+      <SEO title="Coaching" />
       <PageContainer>
         <Box pt={["5", "0"]} bg="var(--c-bg-sec)" className="header">
           <Container>
@@ -79,12 +79,14 @@ const SpeakerPage = () => {
                   välmåendet till liv.
                 </Text>
                 <CallToAction>
-                  <input autoFocus type="text" placeholder="Ditt namn" />
-                  <button>Kom igång</button>
+                  <a
+                    className="main"
+                    href="mailto:dennis@denniswesterberg.com?subject=Boka coaching&body=Hej Dennis, jag är intresserad av att boka coaching. Kan du berätta lite mer om hur det fungerar och vad det kostar?"
+                  >
+                    Maila Dennis
+                  </a>
+                  <a href="tel:0701181818">Ring Dennis</a>
                 </CallToAction>
-                <Text mt="2" fontSize="1rem !important">
-                  Du kan även ringa på 070-518 18 18
-                </Text>
               </Flex>
 
               <Img
@@ -147,6 +149,21 @@ const SpeakerPage = () => {
                 </Text>
               </Flex>
             </Grid>
+            <Box maxWidth="700px" m="0 auto" mb="5">
+              <Text
+                fontSize={["2rem !important", "2.4rem !important"]}
+                lineHeight={["2.4rem !important", "2.8rem !important"]}
+                fontWeight="300 !important"
+                color="var(--c-accent)"
+                mb="2"
+              >
+                ”Dennis ger uttrycket ’att leva i nuet’ en helt ny innebörd, som
+                gör det fullt möjligt att leva ett liv utan stress och oro.”
+              </Text>
+              <Text color="var(--c-sub)">
+                - Peter Schön, fd. VD, Granuldisk
+              </Text>
+            </Box>
             <Grid mb="5" gridTemplateColumns={["1fr 1fr"]} gridGap="5">
               <Flex flexDirection="column" justifyContent="center">
                 <Heading
@@ -186,67 +203,34 @@ const SpeakerPage = () => {
               "linear-gradient(180deg, var(--c-bg) 0%, var(--c-bg-sec) 100%)",
           }}
         >
-          <Container maxWidth="700px !important">
-            <Box mb="5">
-              <Text
-                fontSize={["2rem !important", "2.4rem !important"]}
-                lineHeight={["2.4rem !important", "2.8rem !important"]}
-                fontWeight="300 !important"
-                color="var(--c-accent)"
-                mb="2"
+          <Container maxWidth="800px !important" textAlign="center">
+            <Flex flexDirection="column" alignItems="center">
+              <Heading
+                as="h2"
+                fontSize="2rem"
+                style={{ textTransform: "uppercase" }}
               >
-                ”Dennis ger uttrycket ’att leva i nuet’ en helt ny innebörd, som
-                gör det fullt möjligt att leva ett liv utan stress och oro.”
-              </Text>
-              <Text color="var(--c-sub)">
-                - Peter Schön, fd. VD, Granuldisk
-              </Text>
-            </Box>
-            <Box mb="5">
-              <Text
-                fontSize={["2rem !important", "2.4rem !important"]}
-                lineHeight={["2.4rem !important", "2.8rem !important"]}
-                fontWeight="300 !important"
+                Boka coachning
+              </Heading>
+              <Heading
+                mt="2"
+                as="h4"
+                fontSize="3rem"
+                lineHeight="3.8rem;"
                 color="var(--c-accent)"
-                mb="2"
               >
-                "Jag har lyssnat till de allra främsta föreläsarna i Sverige.
-                Dennis är bättre."
-              </Text>
-              <Text color="var(--c-sub)">
-                - Peter Schön, fd. VD, Granuldisk
-              </Text>
-            </Box>
-            <Box mb="5">
-              <Text
-                fontSize={["2rem !important", "2.4rem !important"]}
-                lineHeight={["2.4rem !important", "2.8rem !important"]}
-                fontWeight="300 !important"
-                color="var(--c-accent)"
-                mb="2"
-              >
-                ”Dennis ger uttrycket ’att leva i nuet’ en helt ny innebörd, som
-                gör det fullt möjligt att leva ett liv utan stress och oro.”
-              </Text>
-              <Text color="var(--c-sub)">
-                - Peter Schön, fd. VD, Granuldisk
-              </Text>
-            </Box>
-            <Box mb="5">
-              <Text
-                fontSize={["2rem !important", "2.4rem !important"]}
-                lineHeight={["2.4rem !important", "2.8rem !important"]}
-                fontWeight="300 !important"
-                color="var(--c-accent)"
-                mb="2"
-              >
-                ”Dennis ger uttrycket ’att leva i nuet’ en helt ny innebörd, som
-                gör det fullt möjligt att leva ett liv utan stress och oro.”
-              </Text>
-              <Text color="var(--c-sub)">
-                - Peter Schön, fd. VD, Granuldisk
-              </Text>
-            </Box>
+                Coachning för dig som tar välmåendet på arbetsplatsen på allvar.
+              </Heading>
+              <CallToAction>
+                <a
+                  className="main"
+                  href="mailto:dennis@denniswesterberg.com?subject=Boka coaching&body=Hej Dennis, jag är intresserad av att boka coaching. Kan du berätta lite mer om hur det fungerar och vad det kostar?"
+                >
+                  Maila Dennis
+                </a>
+                <a href="tel:0701181818">Ring Dennis</a>
+              </CallToAction>
+            </Flex>
           </Container>
         </Box>
       </PageContainer>
@@ -281,37 +265,28 @@ const PageContainer = styled.div`
 `
 
 const CallToAction = styled.div`
-  padding: 10px;
-  background: var(--c-bg-pop);
-  border-radius: 3px;
   max-width: 310px;
   width: 100%;
   margin-top: 2rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 
-  input {
-    background: transparent;
-    flex: 1;
-    border: none;
-    padding: 10px;
-    color: var(--c-heading);
-    &::placeholder,
-    &::-webkit-input-placeholder {
-      color: var(--c-sub);
-    }
-  }
-  button {
-    background: var(--c-cta);
-    color: white;
-    border: none;
+  a {
+    width: 100%;
     font-family: var(--font);
     font-weight: 700;
+    font-size: 0.8rem;
     text-transform: uppercase;
-    padding: 10px;
+    padding: 20px;
     border-radius: 4px;
-    animation: Glow 4s infinite;
-    width: 120px;
+    color: white;
+    border: none;
+    background: var(--c-bg-pop);
+    margin-bottom: 10px;
+    &.main {
+      background: var(--c-cta);
+      animation: Glow 4s infinite;
+    }
   }
 
   @keyframes Glow {

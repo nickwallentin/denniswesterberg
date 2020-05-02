@@ -27,7 +27,7 @@ const BooksPage = () => {
   const books = useBookData()
   return (
     <Layout>
-      <SEO title="Blogg"></SEO>
+      <SEO title="Böcker"></SEO>
       <HubHeader />
       <Box>
         <Container>

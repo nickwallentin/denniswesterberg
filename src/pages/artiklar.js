@@ -23,7 +23,7 @@ const ArticlePage = () => {
   const popular = usePopularPosts()
   return (
     <Layout>
-      <SEO title="Blogg"></SEO>
+      <SEO title="Artiklar"></SEO>
       <HubHeader />
       <Box>
         <Container>
