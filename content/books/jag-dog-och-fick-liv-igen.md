@@ -24,8 +24,7 @@ Boken bjuder på ett hoppfullt budskap. Bortom den fängslande berättelsen om M
 
 Citat om boken
 
-”Så många förklaringar om saker och ting och när jag hade läst ut den blev jag lycklig, riktigt lycklig! Jag mår bättre redan efter någon timme!”  
-Mati, 14 år
+<quote-element author="Mati, 14år">”Så många förklaringar om saker och ting och när jag hade läst ut den blev jag lycklig, riktigt lycklig! Jag mår bättre redan efter någon timme!”</quote-element>
 
 ”Helt underbar, den borde finnas i varje skolbibliotek! Den borde läsas av alla elever i skolorna.”  
 Anna, 25 år
