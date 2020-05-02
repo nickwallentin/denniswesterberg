@@ -24,13 +24,10 @@ Boken bjuder på ett hoppfullt budskap. Bortom den fängslande berättelsen om M
 
 Citat om boken
 
-<quote-element author="Mati, 14år">”Så många förklaringar om saker och ting och när jag hade läst ut den blev jag lycklig, riktigt lycklig! Jag mår bättre redan efter någon timme!”</quote-element>
+<quote-element author="Mati, 14år">Så många förklaringar om saker och ting och när jag hade läst ut den blev jag lycklig, riktigt lycklig! Jag mår bättre redan efter någon timme!</quote-element>
 
-”Helt underbar, den borde finnas i varje skolbibliotek! Den borde läsas av alla elever i skolorna.”  
-Anna, 25 år
+<quote-element author="Anna, 25 år">Helt underbar, den borde finnas i varje skolbibliotek! Den borde läsas av alla elever i skolorna.</quote-element>
 
-”Hade jag läst detta när jag var 16 år och mina föräldrar skildes och min bästa vän övergav mig för anorexian hade mitt liv sett annorlunda ut. Eller om jag hade läst detta innan jag föll ihop hemma och trodde jag skulle dö av panikångest. Kanske hade det tagit kortare tid för mig att hitta mening igen. Förhoppningsvis hade jag sluppit alla kuratorer och psykologer som bara malde på om varför jag mådde som jag mådde, och inte om hur jag kunde se anledningarna, mina tankar, på ett annat sätt. Och använda dem till att må bättre.”  
-Ellen, 20 år
+<quote-element author="Ellen, 20 år">Hade jag läst detta när jag var 16 år och mina föräldrar skildes och min bästa vän övergav mig för anorexian hade mitt liv sett annorlunda ut. Eller om jag hade läst detta innan jag föll ihop hemma och trodde jag skulle dö av panikångest. Kanske hade det tagit kortare tid för mig att hitta mening igen. Förhoppningsvis hade jag sluppit alla kuratorer och psykologer som bara malde på om varför jag mådde som jag mådde, och inte om hur jag kunde se anledningarna, mina tankar, på ett annat sätt. Och använda dem till att må bättre.</quote-element>
 
-”Redan när jag var på sjätte sidan kände jag hur jag bara ville ringa upp alla mina kompisar och tipsa om boken, även fast det var sen lördag kväll.”  
-Shania, 15 år
+<quote-element author="Shania, 15 år">Redan när jag var på sjätte sidan kände jag hur jag bara ville ringa upp alla mina kompisar och tipsa om boken, även fast det var sen lördag kväll.</quote-element>
