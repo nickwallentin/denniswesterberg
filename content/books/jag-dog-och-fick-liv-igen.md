@@ -10,6 +10,8 @@ buy_url: https://www.adlibris.com/se/bok/jag-dog-och-fick-liv-igen-9789188375612
 image: "/content/images/jag-dog-och-fick-liv-igen-1.jpg"
 
 ---
+<quote-element author="Mati, 14år">Så många förklaringar om saker och ting och när jag hade läst ut den blev jag lycklig, riktigt lycklig! Jag mår bättre redan efter någon timme!</quote-element>
+
 Jag visste precis vad som väntade. Tåget skulle dyka upp vid åkerns slut och sedan närma sig, först som ett sött modelltåg och sedan som en monstruös stålbest. Smack. Jag skulle inte känna någonting alls. Så skönt. Det var precis det jag önskade. Jag hade känt tillräckligt. Men då dök Johanna upp, Johanna K. Som en viskning.
 
 Jag dog. Och fick liv igen.
@@ -23,8 +25,6 @@ Boken bjuder på ett hoppfullt budskap. Bortom den fängslande berättelsen om M
 ”Jag dog och fick liv igen” är en sann guide till välmående.
 
 Citat om boken
-
-<quote-element author="Mati, 14år">Så många förklaringar om saker och ting och när jag hade läst ut den blev jag lycklig, riktigt lycklig! Jag mår bättre redan efter någon timme!</quote-element>
 
 <quote-element author="Anna, 25 år">Helt underbar, den borde finnas i varje skolbibliotek! Den borde läsas av alla elever i skolorna.</quote-element>
 
