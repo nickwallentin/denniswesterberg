@@ -279,11 +279,12 @@ const CallToAction = styled.div`
     text-transform: uppercase;
     padding: 20px;
     border-radius: 4px;
-    color: white;
+    color: var(--c-heading);
     border: none;
     background: var(--c-bg-pop);
     margin-bottom: 10px;
     &.main {
+      color: white;
       background: var(--c-cta);
       animation: Glow 4s infinite;
     }

@@ -37,15 +37,14 @@ const animateIcon = {
   hover: { x: 20 },
 }
 
-const HeroSection = () => {
+const StoryHeroSection = () => {
   const data = useStaticQuery(graphql`
-    query getMainImage {
-      file(name: { eq: "dennis-westerberg-index-header-lg" }) {
+    query getMainStoryImage {
+      file(name: { eq: "dennis-westerberg-story-main" }) {
         desktop: childImageSharp {
           fluid(
-            maxWidth: 3000
-            maxHeight: 2000
-            cropFocus: NORTH
+            maxWidth: 2000
+            cropFocus: WEST
             traceSVG: { background: "#0C0C0C", color: "#17181a", threshold: 40 }
           ) {
             ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -75,72 +74,46 @@ const HeroSection = () => {
       <Header overrideColor={true} />
       <Container
         height={["calc(100vh - 205px)"]}
-        display={["flex", "block"]}
-        alignContent={["flex-end"]}
+        display={["flex", "flex"]}
+        alignContent={["flex-start"]}
       >
         <Flex
           flexDirection="column"
-          justifyContent={["flex-end", "center"]}
-          width={[1, 2 / 3]}
+          justifyContent={["flex-end", "flex-end"]}
+          width={[1]}
+          textAlign="center"
           height={["calc(100vh - 110px)", "inherit"]}
+          pb="4"
         >
           <Heading
             as={motion.h1}
-            fontSize={["2rem", "36px"]}
-            textAlign={["center", "left"]}
-            fontWeight="var(--f-weight-subheading) !important"
+            fontSize={["1.5rem", "36px"]}
+            textAlign={["center"]}
             mb={["2", "3"]}
             mt="4"
             color="var(--c-heading-dark)"
             variants={fadeIn}
           >
-            Dennis Westerberg
+            Dennis berättelse
           </Heading>
           <Heading
             variants={fadeIn}
-            fontSize={["2.5rem", "4rem", "5rem"]}
-            textAlign={["center", "left"]}
-            fontWeight="var(--f-weight-fat) !important"
-            fontStyle="uppcercase"
-            style={{ textTransform: "uppercase" }}
+            fontSize={["2.2rem", "4rem", "5.5rem"]}
+            textAlign={["center"]}
+            fontWeight="700 !important"
             mb={["3", "5"]}
-            color="var(--c-heading-dark)"
+            color="var(--c-accent)"
+            style={{ textTransform: "uppercase" }}
           >
-            Din guide till villkorslöst välmående.
+            "...redo att hoppa framför tåget..."
           </Heading>
-          <motion.div variants={fadeIn} whileHover="hover">
-            <TextLink
-              textAlign={["center", "left"]}
-              fontSize={["1.2rem", "2.5rem"]}
-              to="/berattelse"
-              display={["flex", "inline-flex"]}
-              width={["100%", "500px"]}
-              justifyContent={["center", "left"]}
-              mb={["3", "0"]}
-              color="var(--c-accent) !important"
-              iconSize="40px"
-            >
-              Dennis berättelse
-              <motion.span style={{ display: "flex" }} variants={animateIcon}>
-                <ForwardIconBig />
-              </motion.span>
-            </TextLink>
-          </motion.div>
-          <Flex mb={["2rem"]} justifyContent={["center", "flex-start"]}>
-            <Flex
-              justifyContent={["center", "flex-start"]}
-              width={["200px", "100%"]}
-            >
-              <AchievementsImage />
-            </Flex>
-          </Flex>
         </Flex>
       </Container>
     </StyledHeroSection>
   )
 }
 
-export default HeroSection
+export default StoryHeroSection
 
 const StyledHeroSection = styled(Box)`
   background-color: var(--bg);
@@ -161,7 +134,7 @@ const StyledHeroSection = styled(Box)`
       width: 100vw;
       height: 100vh;
       background: linear-gradient(
-        90deg,
+        0deg,
         var(--bg-dark) 0%,
         var(--bg-dark-alpha) 60%
       );
@@ -173,7 +146,7 @@ const StyledHeroSection = styled(Box)`
         background: linear-gradient(
           0deg,
           var(--bg-dark) 0%,
-          var(--bg-dark-alpha) 100%
+          var(--bg-dark-alpha) 50%
         );
       }
     }

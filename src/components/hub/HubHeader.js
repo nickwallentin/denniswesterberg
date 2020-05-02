@@ -122,7 +122,6 @@ const CallToAction = styled.div`
     padding: 10px;
     border-radius: 4px;
     animation: Glow 4s infinite;
-    width: 120px;
   }
 
   @keyframes Glow {

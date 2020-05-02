@@ -43,7 +43,7 @@ const BooksPage = () => {
               >
                 Dennis böcker
               </Heading>
-              <Grid gridTemplateColumns="1fr" gridGap="4">
+              <Grid gridTemplateColumns={"1fr"} gridGap="4">
                 {books.map(({ node: book }) => (
                   <Book>
                     <Link to={"/bocker/" + book.fields.slug}>
@@ -124,5 +124,8 @@ const Book = styled.div`
         color: var(--c-bg);
       }
     }
+  }
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
   }
 `
