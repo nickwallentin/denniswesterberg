@@ -13,7 +13,6 @@ const BookDisplay = ({ title }) => {
       return node.node
     }
   })
-  console.log(bookNode[0])
 
   return (
     <StyledBook>
@@ -73,9 +72,7 @@ const StyledBook = styled.span`
       border-radius: 4px;
       text-align: center;
       margin-top: 10px;
-      &:hover {
-        text-decoration: underline;
-      }
+      text-decoration: none;
     }
     strong {
       font-weight: 500;

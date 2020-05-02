@@ -56,6 +56,10 @@ export default function Blog(props) {
   const allAuthorData = useAuthorData()
   const nextSlug = getNextSlug(data.fields.slug)
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   function getNextSlug(slug) {
     const allSlugs = allBlogData.map(blog => {
       return blog.node.fields.slug
@@ -69,9 +73,9 @@ export default function Blog(props) {
   }
 
   const imgSrc = [
-    data.frontmatter.mobile.childImageSharp.fluid,
+    data.frontmatter.hero_image.mobile.fluid,
     {
-      ...data.frontmatter.desktop.childImageSharp.fluid,
+      ...data.frontmatter.hero_image.desktop.fluid,
       media: `(min-width: 500px)`,
     },
   ]
@@ -188,6 +192,7 @@ export default function Blog(props) {
                     </li>
                     {data.headings.map((heading, index) => (
                       <li
+                        key={heading.value}
                         onClick={() => scrollTo(`#heading-${index + 1}`)}
                         className={"heading-" + heading.depth}
                       >
@@ -331,15 +336,13 @@ export const getPostData = graphql`
         intro
         categories
         date(formatString: "D MMMM, YYYY", locale: "sv")
-        desktop: hero_image {
-          childImageSharp {
+        hero_image {
+          desktop: childImageSharp {
             fluid(maxWidth: 1500) {
               ...GatsbyImageSharpFluid
             }
           }
-        }
-        mobile: hero_image {
-          childImageSharp {
+          mobile: childImageSharp {
             fluid(maxWidth: 400, maxHeight: 500) {
               ...GatsbyImageSharpFluid
             }

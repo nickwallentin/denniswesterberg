@@ -5,10 +5,14 @@ const PodcastEpisode = ({ src }) => {
     return null
   }
   const podId = src.split(":")[2]
-  console.log("Podcast is active")
+
   return (
     <iframe
-      src={`https://open.spotify.com/embed-podcast/episode/${podId}`}
+      src={
+        src
+          ? `https://open.spotify.com/embed-podcast/episode/${podId}`
+          : "https://open.spotify.com/embed-podcast/show/6WcO5GvgWXhUxmpz9ET2Kt"
+      }
       width="100%"
       height="232"
       frameborder="0"

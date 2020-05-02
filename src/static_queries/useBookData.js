@@ -18,6 +18,11 @@ export default function useBookData() {
                     ...GatsbyImageSharpFluid_withWebp
                   }
                 }
+                large: childImageSharp {
+                  fluid(maxWidth: 200) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
               }
             }
             fields {
